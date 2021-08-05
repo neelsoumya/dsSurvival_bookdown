@@ -11,11 +11,11 @@ This is a standalone bolt on package for survival analysis in DataSHIELD. DataSH
 
 DataSHIELD has a client-server architecture and this package has a client side and server side component.
 
-    * The server side package is called dsSurvival:
+  * The server side package is called dsSurvival:
       
         https://github.com/neelsoumya/dsSurvival
 
-    * The client side package is called dsSurvivalClient:
+  * The client side package is called dsSurvivalClient:
       
         https://github.com/neelsoumya/dsSurvivalClient
 
@@ -26,11 +26,11 @@ DataSHIELD has a client-server architecture and this package has a client side a
 
 ## Usage
 
-    see vignettes and tutorials below
+see vignettes and tutorials below
 
-    https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
+https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
 
-    https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
+https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
 
 
 A minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
