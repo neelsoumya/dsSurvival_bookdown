@@ -29,7 +29,7 @@ devtools::install_github('https://github.com/datashield/dsModellingClient')#, fo
 #library(dsModellingClient)
 #devtools::install_github('https://github.com/datashield/DSOpal')#, force = TRUE)
 
-install.packages('shiny')
+install.packages('bookdown')
 install.packages('rmarkdown')
 install.packages('knitr')
 install.packages('tinytex')
@@ -40,3 +40,4 @@ library(dsHelper)
 
 devtools::install_github('https://github.com/neelsoumya/dsSurvivalClient', 'privacy_survival_curves')#, force = TRUE)
 library(dsSurvivalClient)
+library(bookdown)
