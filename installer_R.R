@@ -6,15 +6,10 @@
 install.packages('devtools')
 library(devtools)
 devtools::install_github('https://github.com/datashield/dsBaseClient')
-
-devtools::install_github('https://github.com/datashield/dsBase')
-library(dsBase)
+library(dsBaseClient)
 
 devtools::install_github('https://github.com/datashield/opal')
 library(opal)
-
-devtools::install_github('https://github.com/datashield/dsBaseClient', force = TRUE)
-library(dsBaseClient)
 
 devtools::install_github('https://github.com/datashield/dsStatsClient')#, force = TRUE)
 
@@ -34,9 +29,6 @@ install.packages('rmarkdown')
 install.packages('knitr')
 install.packages('tinytex')
 install.packages('metafor')
-
-devtools::install_github(repo = 'https://github.com/lifecycle-project/ds-helper/', ref = 'completecases' )
-library(dsHelper)
 
 devtools::install_github('https://github.com/neelsoumya/dsSurvivalClient', 'privacy_survival_curves')#, force = TRUE)
 library(dsSurvivalClient)
