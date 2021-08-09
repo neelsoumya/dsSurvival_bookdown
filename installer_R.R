@@ -1,6 +1,5 @@
 ###############################################
 # code to install all DataSHIELD R packages
-#     and packages for GUI
 ###############################################
 
 install.packages('devtools')
