@@ -386,3 +386,19 @@ dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
 #############################################
 DSI::datashield.logout(conns = connections)
 ```
+
+
+* https://github.com/datashield
+  
+  * http://www.metafor-project.org
+  
+  * https://github.com/neelsoumya/dsBase
+
+  * https://github.com/neelsoumya/dsBaseClient
+
+  * https://github.com/neelsoumya/dsSurvival
+
+  * https://github.com/neelsoumya/dsSurvivalClient
+  
+  * https://github.com/neelsoumya/datashield_testing_basic
+  
