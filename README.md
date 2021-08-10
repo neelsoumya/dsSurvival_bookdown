@@ -1,7 +1,7 @@
 
 ## Introduction
 
-This is a bookdown demonstrating how to use the dsSurvival package to create survival models in DataSHIELD.
+This is a bookdown with executable code demonstrating how to use the dsSurvival package to create survival models in DataSHIELD.
 
 * https://github.com/neelsoumya/dsSurvivalClient
 
