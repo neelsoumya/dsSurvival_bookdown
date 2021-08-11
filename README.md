@@ -1,9 +1,12 @@
 
 ## Introduction
 
-This is a bookdown with executable code demonstrating how to use the dsSurvival package to create survival models in DataSHIELD.
+This is a bookdown with executable code demonstrating how to use the dsSurvival package to create survival models in DataSHIELD. dsSurvival builds privacy preserving survival models.
 
 * https://github.com/neelsoumya/dsSurvivalClient
+
+* https://github.com/neelsoumya/dsSurvival
+
 
 This is a package for building survival functions (client side) for DataSHIELD (a platform for federated analysis of private data). These are client side functions for building survival models, Cox proportional hazards models and Cox regression models.
 

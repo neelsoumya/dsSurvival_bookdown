@@ -397,32 +397,33 @@ using the *metafor* package.
 metafor::forest.rma(x = meta_model)
 ```    
 
-# Plotting of privacy-preserving survival curves
-
-We also plot privacy preserving survival curves. Please note that is work in progress and is only available on a separate development branch. There will be a full release in v1.1.0.
-
-```
-dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
-dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
-```
-
-
-```{r, echo = FALSE}
-dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
-```
-
-```{r fig.cap="Privacy preserving survival curves.", echo = FALSE}
-dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
-```
 
 \newpage
    
 ```{r, include=FALSE}
+
 #############################################
 # disconnect
 #############################################
 DSI::datashield.logout(conns = connections)
+
 ```
+
+
+* https://github.com/datashield
+  
+  * http://www.metafor-project.org
+  
+  * https://github.com/neelsoumya/dsBase
+
+  * https://github.com/neelsoumya/dsBaseClient
+
+  * https://github.com/neelsoumya/dsSurvival
+
+  * https://github.com/neelsoumya/dsSurvivalClient
+  
+  * https://github.com/neelsoumya/datashield_testing_basic
+  
 
 <!--chapter:end:01-intro.Rmd-->
 
