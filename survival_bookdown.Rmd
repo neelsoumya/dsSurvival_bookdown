@@ -469,7 +469,7 @@ chapter:end:03-method.Rmd
 
 # Final Words
 
-We have finished a nice book.
+This bookdown demonstrates how to build survival models using the dsSurvival package in DataSHIELD.
 
 <!--chapter:end:05-summary.Rmd-->
 
@@ -477,5 +477,5 @@ We have finished a nice book.
 # References {-}
 '`
 
-<!--chapter:end:06-references.Rmd-->
+chapter:end:06-references.Rmd
 
