@@ -454,22 +454,21 @@ We also present privacy preserving summaries of Cox models and survival objects.
 
   
 
-chapter:end:03-method.Rmd
+<!--chapter:end:03-method.Rmd-->
 
+# Applications
 
-<!-- # Applications -->
+Some _significant_ applications are demonstrated in this chapter.
 
-<!-- Some _significant_ applications are demonstrated in this chapter. -->
+## Example one
 
-<!-- ## Example one -->
-
-<!-- ## Example two -->
+## Example two
 
 <!--chapter:end:04-application.Rmd-->
 
 # Final Words
 
-This bookdown demonstrates how to build survival models using the dsSurvival package in DataSHIELD.
+We have finished a nice book.
 
 <!--chapter:end:05-summary.Rmd-->
 
@@ -477,5 +476,5 @@ This bookdown demonstrates how to build survival models using the dsSurvival pac
 # References {-}
 '`
 
-chapter:end:06-references.Rmd
+<!--chapter:end:06-references.Rmd-->
 

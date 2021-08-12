@@ -4,9 +4,10 @@
 
 install.packages('devtools')
 library(devtools)
-devtools::install_github('https://github.com/datashield/dsBaseClient')
+#devtools::install_github('https://github.com/datashield/dsBaseClient')
+devtools::install_github('datashield/dsBaseClient@6.1.1')
 library(dsBaseClient)
-
+ 
 devtools::install_github('https://github.com/datashield/opal')
 library(opal)
 
