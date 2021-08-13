@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Survival models in DataSHIELD</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Survival models in DataSHIELD" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Survival models in DataSHIELD" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Soumya Banerjee and Tom Bishop" />
+
+
+<meta name="date" content="2021-08-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="summary-of-survival-objects.html"/>
+<link rel="next" href="meta-analyze-hazard-ratios.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="computational-workflow.html"><a href="computational-workflow.html"><i class="fa fa-check"></i><b>3</b> Computational workflow</a></li>
+<li class="chapter" data-level="4" data-path="creating-server-side-variables-for-survival-analysis.html"><a href="creating-server-side-variables-for-survival-analysis.html"><i class="fa fa-check"></i><b>4</b> Creating server-side variables for survival analysis</a></li>
+<li class="chapter" data-level="5" data-path="create-survival-object-and-call-ds-coxph-slma.html"><a href="create-survival-object-and-call-ds-coxph-slma.html"><i class="fa fa-check"></i><b>5</b> Create survival object and call ds.coxph.SLMA()</a></li>
+<li class="chapter" data-level="6" data-path="summary-of-survival-objects.html"><a href="summary-of-survival-objects.html"><i class="fa fa-check"></i><b>6</b> Summary of survival objects</a></li>
+<li class="chapter" data-level="7" data-path="diagnostics-for-cox-proportional-hazards-models.html"><a href="diagnostics-for-cox-proportional-hazards-models.html"><i class="fa fa-check"></i><b>7</b> Diagnostics for Cox proportional hazards models</a></li>
+<li class="chapter" data-level="8" data-path="meta-analyze-hazard-ratios.html"><a href="meta-analyze-hazard-ratios.html"><i class="fa fa-check"></i><b>8</b> Meta-analyze hazard ratios</a></li>
+<li class="chapter" data-level="9" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>9</b> Literature</a></li>
+<li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
+<li class="chapter" data-level="11" data-path="dealing-with-preserving-privacy-and-disclosure-checks.html"><a href="dealing-with-preserving-privacy-and-disclosure-checks.html"><i class="fa fa-check"></i><b>11</b> Dealing with preserving privacy and disclosure checks</a><ul>
+<li class="chapter" data-level="11.1" data-path="dealing-with-preserving-privacy-and-disclosure-checks.html"><a href="dealing-with-preserving-privacy-and-disclosure-checks.html#disclosure-related-to-oversaturated-models"><i class="fa fa-check"></i><b>11.1</b> Disclosure related to oversaturated models</a></li>
+<li class="chapter" data-level="11.2" data-path="dealing-with-preserving-privacy-and-disclosure-checks.html"><a href="dealing-with-preserving-privacy-and-disclosure-checks.html#summary-of-cox-models-with-no-individual-data"><i class="fa fa-check"></i><b>11.2</b> Summary of Cox models with no individual data</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>12</b> Applications</a><ul>
+<li class="chapter" data-level="12.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>12.1</b> Example one</a></li>
+<li class="chapter" data-level="12.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>12.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>13</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">dsSurvival: Survival models in DataSHIELD</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="diagnostics-for-cox-proportional-hazards-models" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Diagnostics for Cox proportional hazards models</h1>
+<p>We have also created functions to test for the assumptions of
+Cox proportional hazards models.</p>
+<pre><code>dsSurvivalClient::ds.coxphSLMAassign(formula = &#39;surv_object~D$age+D$female&#39;,
+                            objectname = &#39;coxph_serverside&#39;)
+dsSurvivalClient::ds.cox.zphSLMA(fit = &#39;coxph_serverside&#39;)
+dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
+<p>A diagnostic summary is shown below.</p>
+<pre><code>## surv_object~D$age+D$female</code></pre>
+<pre><code>## 
+  Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
+<pre><code>## NULL</code></pre>
+<pre><code>## 
+  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
+  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
+  Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
+<pre><code>## $study1
+##          chisq df    p
+## D$age    1.022  1 0.31
+## D$female 0.364  1 0.55
+## GLOBAL   1.239  2 0.54
+## 
+## $study2
+##              chisq df    p
+## D$age    -1389.472  1 1.00
+## D$female     0.591  1 0.44
+## GLOBAL    -857.492  2 1.00
+## 
+## $study3
+##          chisq df       p
+## D$age    15.27  1 9.3e-05
+## D$female  8.04  1  0.0046
+## GLOBAL   23.31  2 8.7e-06</code></pre>
+<pre><code>## 
+  Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 0s</code></pre>
+<pre><code>## $study1
+## Call:
+## survival::coxph(formula = formula, data = dataTable, weights = weights, 
+##     ties = ties, singular.ok = singular.ok, model = model, x = x, 
+##     y = y)
+## 
+##   n= 2060, number of events= 426 
+## 
+##                coef exp(coef)  se(coef)      z
+## D$age      0.041609  1.042487  0.003498 11.894
+## D$female1 -0.660002  0.516850  0.099481 -6.634
+##           Pr(&gt;|z|)    
+## D$age      &lt; 2e-16 ***
+## D$female1 3.26e-11 ***
+## ---
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##           exp(coef) exp(-coef) lower .95 upper .95
+## D$age        1.0425     0.9592    1.0354    1.0497
+## D$female1    0.5169     1.9348    0.4253    0.6281
+## 
+## Concordance= 0.676  (se = 0.014 )
+## Likelihood ratio test= 170.7  on 2 df,   p=&lt;2e-16
+## Wald test            = 168.2  on 2 df,   p=&lt;2e-16
+## Score (logrank) test = 166.3  on 2 df,   p=&lt;2e-16
+## 
+## 
+## $study2
+## Call:
+## survival::coxph(formula = formula, data = dataTable, weights = weights, 
+##     ties = ties, singular.ok = singular.ok, model = model, x = x, 
+##     y = y)
+## 
+##   n= 1640, number of events= 300 
+## 
+##               coef exp(coef) se(coef)      z
+## D$age      0.04067   1.04151  0.00416  9.776
+## D$female1 -0.62756   0.53389  0.11767 -5.333
+##           Pr(&gt;|z|)    
+## D$age      &lt; 2e-16 ***
+## D$female1 9.66e-08 ***
+## ---
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##           exp(coef) exp(-coef) lower .95 upper .95
+## D$age        1.0415     0.9601    1.0331    1.0500
+## D$female1    0.5339     1.8730    0.4239    0.6724
+## 
+## Concordance= 0.674  (se = 0.017 )
+## Likelihood ratio test= 117.8  on 2 df,   p=&lt;2e-16
+## Wald test            = 115.2  on 2 df,   p=&lt;2e-16
+## Score (logrank) test = 116.4  on 2 df,   p=&lt;2e-16
+## 
+## 
+## $study3
+## Call:
+## survival::coxph(formula = formula, data = dataTable, weights = weights, 
+##     ties = ties, singular.ok = singular.ok, model = model, x = x, 
+##     y = y)
+## 
+##   n= 2688, number of events= 578 
+## 
+##                coef exp(coef)  se(coef)      z
+## D$age      0.042145  1.043045  0.003086 13.655
+## D$female1 -0.599238  0.549230  0.084305 -7.108
+##           Pr(&gt;|z|)    
+## D$age      &lt; 2e-16 ***
+## D$female1 1.18e-12 ***
+## ---
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##           exp(coef) exp(-coef) lower .95 upper .95
+## D$age        1.0430     0.9587    1.0368    1.0494
+## D$female1    0.5492     1.8207    0.4656    0.6479
+## 
+## Concordance= 0.699  (se = 0.011 )
+## Likelihood ratio test= 227.9  on 2 df,   p=&lt;2e-16
+## Wald test            = 228.4  on 2 df,   p=&lt;2e-16
+## Score (logrank) test = 229.4  on 2 df,   p=&lt;2e-16</code></pre>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="summary-of-survival-objects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="meta-analyze-hazard-ratios.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["survival_bookdown.pdf", "survival_bookdown.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
