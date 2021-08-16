@@ -393,9 +393,7 @@ summary(meta_model)
 #######################################################
 ```
 
-We now show a forest plot with the meta-analyzed hazard ratios. The hazard ratios come
-from the dsSurvivalClient function *ds.coxphSLMA()*. The hazard ratios are meta-analyzed
-using the *metafor* package.
+We now show a forest plot with the meta-analyzed hazard ratios. The hazard ratios come from the dsSurvivalClient function *ds.coxphSLMA()*. The hazard ratios are meta-analyzed using the *metafor* package.
 
 ```{r fig.cap="Example forest plot of meta-analyzed hazard ratios.", echo=FALSE}
 metafor::forest.rma(x = meta_model)
