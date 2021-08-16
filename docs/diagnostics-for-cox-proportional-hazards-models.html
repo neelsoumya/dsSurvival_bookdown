@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Survival models in DataSHIELD</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="description" content="This is a bookdown demonstrating how to build privacy preserving survival models using dsSurvival in DataSHIELD. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Survival models in DataSHIELD" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is a bookdown demonstrating how to build privacy preserving survival models using dsSurvival in DataSHIELD. The output format for this example is bookdown::gitbook." />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Survival models in DataSHIELD" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is a bookdown demonstrating how to build privacy preserving survival models using dsSurvival in DataSHIELD. The output format for this example is bookdown::gitbook." />
   
 
-<meta name="author" content="Soumya Banerjee and Tom Bishop" />
+<meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-08-13" />
+<meta name="date" content="2021-08-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -188,12 +188,14 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 <p>A diagnostic summary is shown below.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
 <pre><code>## 
+  Assigning study2 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$femal...
+  Assigning study3 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$femal...
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
-  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
-  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
-  Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
+  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 1s
+  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 1s
+  Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 2s</code></pre>
 <pre><code>## $study1
 ##          chisq df    p
 ## D$age    1.022  1 0.31
@@ -212,7 +214,9 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 ## D$female  8.04  1  0.0046
 ## GLOBAL   23.31  2 8.7e-06</code></pre>
 <pre><code>## 
-  Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 0s</code></pre>
+  Aggregating study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [==============&gt;---------------]  50% / 0s
+  Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 1s
+  Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 2s</code></pre>
 <pre><code>## $study1
 ## Call:
 ## survival::coxph(formula = formula, data = dataTable, weights = weights, 
@@ -353,20 +357,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
