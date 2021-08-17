@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-08-16" />
+<meta name="date" content="2021-08-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,7 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
   Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 1s
-  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 1s
+  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 2s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 2s</code></pre>
 <pre><code>## $study1
 ##          chisq df    p
@@ -214,7 +214,7 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 ## D$female  8.04  1  0.0046
 ## GLOBAL   23.31  2 8.7e-06</code></pre>
 <pre><code>## 
-  Aggregating study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [==============&gt;---------------]  50% / 0s
+  Aggregating study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [==============&gt;---------------]  50% / 1s
   Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 1s
   Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 2s</code></pre>
 <pre><code>## $study1
@@ -225,19 +225,23 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 ## 
 ##   n= 2060, number of events= 426 
 ## 
-##                coef exp(coef)  se(coef)      z
-## D$age      0.041609  1.042487  0.003498 11.894
-## D$female1 -0.660002  0.516850  0.099481 -6.634
-##           Pr(&gt;|z|)    
-## D$age      &lt; 2e-16 ***
-## D$female1 3.26e-11 ***
+##                coef exp(coef)  se(coef)
+## D$age      0.041609  1.042487  0.003498
+## D$female1 -0.660002  0.516850  0.099481
+##                z Pr(&gt;|z|)    
+## D$age     11.894  &lt; 2e-16 ***
+## D$female1 -6.634 3.26e-11 ***
 ## ---
 ## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+##   0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39;
+##   0.1 &#39; &#39; 1
 ## 
-##           exp(coef) exp(-coef) lower .95 upper .95
-## D$age        1.0425     0.9592    1.0354    1.0497
-## D$female1    0.5169     1.9348    0.4253    0.6281
+##           exp(coef) exp(-coef) lower .95
+## D$age        1.0425     0.9592    1.0354
+## D$female1    0.5169     1.9348    0.4253
+##           upper .95
+## D$age        1.0497
+## D$female1    0.6281
 ## 
 ## Concordance= 0.676  (se = 0.014 )
 ## Likelihood ratio test= 170.7  on 2 df,   p=&lt;2e-16
@@ -253,19 +257,23 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 ## 
 ##   n= 1640, number of events= 300 
 ## 
-##               coef exp(coef) se(coef)      z
-## D$age      0.04067   1.04151  0.00416  9.776
-## D$female1 -0.62756   0.53389  0.11767 -5.333
-##           Pr(&gt;|z|)    
-## D$age      &lt; 2e-16 ***
-## D$female1 9.66e-08 ***
+##               coef exp(coef) se(coef)
+## D$age      0.04067   1.04151  0.00416
+## D$female1 -0.62756   0.53389  0.11767
+##                z Pr(&gt;|z|)    
+## D$age      9.776  &lt; 2e-16 ***
+## D$female1 -5.333 9.66e-08 ***
 ## ---
 ## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+##   0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39;
+##   0.1 &#39; &#39; 1
 ## 
-##           exp(coef) exp(-coef) lower .95 upper .95
-## D$age        1.0415     0.9601    1.0331    1.0500
-## D$female1    0.5339     1.8730    0.4239    0.6724
+##           exp(coef) exp(-coef) lower .95
+## D$age        1.0415     0.9601    1.0331
+## D$female1    0.5339     1.8730    0.4239
+##           upper .95
+## D$age        1.0500
+## D$female1    0.6724
 ## 
 ## Concordance= 0.674  (se = 0.017 )
 ## Likelihood ratio test= 117.8  on 2 df,   p=&lt;2e-16
@@ -281,19 +289,23 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 ## 
 ##   n= 2688, number of events= 578 
 ## 
-##                coef exp(coef)  se(coef)      z
-## D$age      0.042145  1.043045  0.003086 13.655
-## D$female1 -0.599238  0.549230  0.084305 -7.108
-##           Pr(&gt;|z|)    
-## D$age      &lt; 2e-16 ***
-## D$female1 1.18e-12 ***
+##                coef exp(coef)  se(coef)
+## D$age      0.042145  1.043045  0.003086
+## D$female1 -0.599238  0.549230  0.084305
+##                z Pr(&gt;|z|)    
+## D$age     13.655  &lt; 2e-16 ***
+## D$female1 -7.108 1.18e-12 ***
 ## ---
 ## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+##   0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39;
+##   0.1 &#39; &#39; 1
 ## 
-##           exp(coef) exp(-coef) lower .95 upper .95
-## D$age        1.0430     0.9587    1.0368    1.0494
-## D$female1    0.5492     1.8207    0.4656    0.6479
+##           exp(coef) exp(-coef) lower .95
+## D$age        1.0430     0.9587    1.0368
+## D$female1    0.5492     1.8207    0.4656
+##           upper .95
+## D$age        1.0494
+## D$female1    0.6479
 ## 
 ## Concordance= 0.699  (se = 0.011 )
 ## Likelihood ratio test= 227.9  on 2 df,   p=&lt;2e-16
