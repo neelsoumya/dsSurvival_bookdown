@@ -8,15 +8,14 @@ output:
 This is a document that outlines a vignette for implementing survival models
 and meta-analyzing hazard ratios in the DataSHIELD platform.
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+<!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
 
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
-
-
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+<!-- Figures and tables with captions will be placed in `figure` and `table` environments, respectively. -->
 
 
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+<!-- Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab). -->
+
+We used the **bookdown** package [@R-bookdown], R Markdown and **knitr** [@xie2015] for this document. Our package **dsSurvival** [@Banerjeef] uses the **metafor** package for meta-analysis [@Viechtbauer2010].
 
 
 
