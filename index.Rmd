@@ -1,5 +1,5 @@
 --- 
-title: "dsSurvival: Survival models in DataSHIELD"
+title: "dsSurvival: Privacy preserving survival models in DataSHIELD"
 author: "Soumya Banerjee and Tom R P Bishop"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
