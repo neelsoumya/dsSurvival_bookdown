@@ -26,7 +26,6 @@ The first step is connecting to the server and loading the survival data.
 We assume that the reader is familiar with these details.
 
 ```
-devtools::install_github('neelsoumya/dsSurvivalClient', 'privacy_survival_curves')
 
 library(knitr)
 library(rmarkdown)
