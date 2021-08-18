@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-08-17" />
+<meta name="date" content="2021-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -145,17 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="summary-of-survival-objects.html"><a href="summary-of-survival-objects.html"><i class="fa fa-check"></i><b>6</b> Summary of survival objects</a></li>
 <li class="chapter" data-level="7" data-path="diagnostics-for-cox-proportional-hazards-models.html"><a href="diagnostics-for-cox-proportional-hazards-models.html"><i class="fa fa-check"></i><b>7</b> Diagnostics for Cox proportional hazards models</a></li>
 <li class="chapter" data-level="8" data-path="meta-analyze-hazard-ratios.html"><a href="meta-analyze-hazard-ratios.html"><i class="fa fa-check"></i><b>8</b> Meta-analyze hazard ratios</a></li>
-<li class="chapter" data-level="9" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>9</b> Literature</a></li>
-<li class="chapter" data-level="10" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>10</b> Methods</a></li>
-<li class="chapter" data-level="11" data-path="dealing-with-preserving-privacy-and-disclosure-checks.html"><a href="dealing-with-preserving-privacy-and-disclosure-checks.html"><i class="fa fa-check"></i><b>11</b> Dealing with preserving privacy and disclosure checks</a><ul>
-<li class="chapter" data-level="11.1" data-path="dealing-with-preserving-privacy-and-disclosure-checks.html"><a href="dealing-with-preserving-privacy-and-disclosure-checks.html#disclosure-related-to-oversaturated-models"><i class="fa fa-check"></i><b>11.1</b> Disclosure related to oversaturated models</a></li>
-<li class="chapter" data-level="11.2" data-path="dealing-with-preserving-privacy-and-disclosure-checks.html"><a href="dealing-with-preserving-privacy-and-disclosure-checks.html#summary-of-cox-models-with-no-individual-data"><i class="fa fa-check"></i><b>11.2</b> Summary of Cox models with no individual data</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>12</b> Applications</a><ul>
-<li class="chapter" data-level="12.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>12.1</b> Example one</a></li>
-<li class="chapter" data-level="12.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>12.2</b> Example two</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>13</b> Final Words</a></li>
+<li class="chapter" data-level="9" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>9</b> Summary</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -193,9 +183,9 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
-  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 1s
-  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 2s
-  Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 2s</code></pre>
+  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 2s
+  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 3s
+  Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 5s</code></pre>
 <pre><code>## $study1
 ##          chisq df    p
 ## D$age    1.022  1 0.31
@@ -214,9 +204,9 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 ## D$female  8.04  1  0.0046
 ## GLOBAL   23.31  2 8.7e-06</code></pre>
 <pre><code>## 
-  Aggregating study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [==============&gt;---------------]  50% / 1s
-  Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 1s
-  Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 2s</code></pre>
+  Aggregating study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [==============&gt;---------------]  50% / 2s
+  Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 4s
+  Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 5s</code></pre>
 <pre><code>## $study1
 ## Call:
 ## survival::coxph(formula = formula, data = dataTable, weights = weights, 

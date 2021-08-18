@@ -7,12 +7,4 @@ create-survival-object-and-call-ds.coxph.slma
 summary-of-survival-objects
 diagnostics-for-cox-proportional-hazards-models
 meta-analyze-hazard-ratios
-literature
-methods
-dealing-with-preserving-privacy-and-disclosure-checks
-disclosure-related-to-oversaturated-models
-summary-of-cox-models-with-no-individual-data
-applications
-example-one
-example-two
-final-words
+summary
