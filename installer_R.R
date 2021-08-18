@@ -1,5 +1,8 @@
 ###############################################
 # code to install all DataSHIELD R packages
+# Usage:
+#    R --no-save < installer_R.R
+#
 ###############################################
 
 install.packages('devtools')
@@ -12,11 +15,9 @@ devtools::install_github('https://github.com/datashield/opal')
 library(opal)
 
 devtools::install_github('https://github.com/datashield/dsStatsClient')#, force = TRUE)
-
 library(dsStatsClient)
 
 devtools::install_github('https://github.com/datashield/dsGraphicsClient')#, force = TRUE)
-
 library(dsGraphicsClient)
 
 devtools::install_github('https://github.com/datashield/dsModellingClient')#, force = TRUE)
