@@ -1,7 +1,7 @@
 
 ## Introduction
 
-This is a bookdown with executable code demonstrating how to use the dsSurvival package to create survival models in DataSHIELD. dsSurvival builds privacy preserving survival models.
+This is a bookdown with executable code demonstrating how to use the dsSurvival package to create privacy preserving survival models in DataSHIELD. dsSurvival builds privacy preserving survival models.
 
 * https://github.com/neelsoumya/dsSurvivalClient
 
