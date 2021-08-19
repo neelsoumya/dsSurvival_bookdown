@@ -1,3 +1,8 @@
 # Summary
 
-This bookdown shows how to build privacy preserving survival models using dsSurvival in DataSHIELD.
+This bookdown shows how to build privacy preserving survival models using dsSurvival in DataSHIELD. You can read more at:
+
+
+* https://github.com/neelsoumya/dsSurvivalClient
+
+* https://github.com/neelsoumya/dsSurvival
