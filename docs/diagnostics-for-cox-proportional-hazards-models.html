@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Survival models in DataSHIELD</title>
+  <title>Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Privacy preserving survival models in DataSHIELD</title>
   <meta name="description" content="This is a bookdown demonstrating how to build privacy preserving survival models using dsSurvival in DataSHIELD. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Survival models in DataSHIELD" />
+  <meta property="og:title" content="Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Privacy preserving survival models in DataSHIELD" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Survival models in DataSHIELD" />
+  <meta name="twitter:title" content="Chapter 7 Diagnostics for Cox proportional hazards models | dsSurvival: Privacy preserving survival models in DataSHIELD" />
   
   <meta name="twitter:description" content="This is a bookdown demonstrating how to build privacy preserving survival models using dsSurvival in DataSHIELD. The output format for this example is bookdown::gitbook." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-08-18" />
+<meta name="date" content="2021-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -159,7 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">dsSurvival: Survival models in DataSHIELD</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">dsSurvival: Privacy preserving survival models in DataSHIELD</a>
           </h1>
         </div>
 
@@ -177,9 +177,10 @@ dsSurvivalClient::ds.cox.zphSLMA(fit = &#39;coxph_serverside&#39;)
 dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 <p>A diagnostic summary is shown below.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
+<pre><code>## 
+  Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
-  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
   Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
