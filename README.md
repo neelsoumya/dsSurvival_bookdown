@@ -25,10 +25,15 @@ The complete bookdown is available here:
 https://neelsoumya.github.io/dsSurvival_bookdown
 
 
-
 ## Installation
 
   R -no-save < installer_R.R
+  
+  or
+  
+  run the script
+  
+  installer_R.R
 
 
 ## Usage
