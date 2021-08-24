@@ -48,6 +48,16 @@ https://neelsoumya.github.io/dsSurvival_bookdown
   
   install.packages('bookdown')
   
+  devtools::install_github('datashield/dsBaseClient@6.1.1')
+ 
+  install.packages('rmarkdown')
+
+  install.packages('knitr')
+
+  install.packages('tinytex')
+
+  install.packages('metafor')
+  
   ```
 
 
