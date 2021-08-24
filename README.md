@@ -33,6 +33,22 @@ https://neelsoumya.github.io/dsSurvival_bookdown
   run the script
   
   installer_R.R
+  
+  or
+  
+  ```
+  
+  install.packages('devtools')
+
+  library(devtools)
+
+  devtools::install_github('neelsoumya/dsBaseClient')
+
+  devtools::install_github('neelsoumya/dsSurvivalClient')
+  
+  install.packages('bookdown')
+  
+  ```
 
 
 ## Usage
