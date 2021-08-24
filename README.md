@@ -8,7 +8,7 @@ This is a bookdown with executable code demonstrating how to use the dsSurvival 
 * https://github.com/neelsoumya/dsSurvival
 
 
-This is a package for building survival functions for DataSHIELD. DataSHIELD is a platform for federated analysis of private data. This package can be used to build survival models, Cox proportional hazards models and Cox regression models.
+DataSHIELD is a platform for federated analysis of private data. This package can be used to build survival models, Cox proportional hazards models and Cox regression models.
 
 DataSHIELD has a client-server architecture and this package has a client side and server side component.
 
