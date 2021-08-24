@@ -65,3 +65,11 @@ The bookdown can be compiled by typing the following commands:
 
 Soumya Banerjee and Tom R P Bishop
 
+
+
+## Citation
+
+If you use this code, please cite the following DOI
+
+[![DOI](https://zenodo.org/badge/362161720.svg)](https://zenodo.org/badge/latestdoi/362161720)
+
