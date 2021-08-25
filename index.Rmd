@@ -18,6 +18,27 @@ The **bookdown** package can be installed from CRAN or Github:
 install.packages("bookdown")
 # or the development version
 # devtools::install_github("rstudio/bookdown")
+
+
+install.packages('devtools')
+
+library(devtools)
+
+devtools::install_github('neelsoumya/dsBaseClient')
+
+devtools::install_github('neelsoumya/dsSurvivalClient')
+
+devtools::install_github('datashield/dsBaseClient@6.1.1')
+
+install.packages('rmarkdown')
+
+install.packages('knitr')
+
+install.packages('tinytex')
+
+install.packages('metafor')
+
+
 ```
 
 <!-- Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`. -->
