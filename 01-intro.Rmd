@@ -5,7 +5,7 @@ output:
 ---
 # Introduction {#intro}
 
-This is a document that outlines a vignette for implementing survival models
+This is a document that outlines a vignette for implementing privacy preserving survival models
 and meta-analyzing hazard ratios in the DataSHIELD platform.
 
 <!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
