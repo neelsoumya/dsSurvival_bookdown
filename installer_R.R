@@ -2,6 +2,8 @@
 # code to install all DataSHIELD R packages
 # Usage:
 #    R --no-save < installer_R.R
+#    or
+#    source('installer_R.R')
 #
 ###############################################
 
