@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-08-26" />
+<meta name="date" content="2021-08-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,8 +173,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Cox proportional hazards models.</p>
 <pre><code>dsSurvivalClient::ds.coxphSLMAassign(formula = &#39;surv_object~D$age+D$female&#39;,
                             objectname = &#39;coxph_serverside&#39;)
+                
 dsSurvivalClient::ds.cox.zphSLMA(fit = &#39;coxph_serverside&#39;)
-dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
+
+dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
+</code></pre>
 <p>A diagnostic summary is shown below.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
 <pre><code>## 
@@ -206,7 +209,7 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 <pre><code>## 
   Aggregating study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [==============&gt;---------------]  50% / 2s
   Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 4s
-  Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 5s</code></pre>
+  Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 6s</code></pre>
 <pre><code>## $study1
 ## Call:
 ## survival::coxph(formula = formula, data = dataTable, weights = weights, 
