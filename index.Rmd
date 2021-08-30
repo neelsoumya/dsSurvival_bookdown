@@ -10,6 +10,10 @@ link-citations: yes
 description: "This is a bookdown demonstrating how to build privacy preserving survival models using dsSurvival in DataSHIELD. The output format for this example is bookdown::gitbook."
 ---
 
+This is a bookdown with executable code demonstrating how to use the dsSurvival package to create privacy preserving survival models in DataSHIELD. dsSurvival builds privacy preserving survival models.
+
+
+
 # Prerequisites
 
 Please install R and R Studio. We assume that the reader is familiar with R and DataSHIELD.
