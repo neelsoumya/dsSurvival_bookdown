@@ -15,16 +15,11 @@ description: "This is a bookdown demonstrating how to build privacy preserving s
 The **bookdown** package can be installed from CRAN or Github:
 
 ```{r eval=FALSE}
-# install.packages("bookdown")
-# or the development version
-# devtools::install_github("rstudio/bookdown")
 
 
 install.packages('devtools')
 
 library(devtools)
-
-devtools::install_github('neelsoumya/dsBaseClient')
 
 devtools::install_github('neelsoumya/dsSurvivalClient')
 
