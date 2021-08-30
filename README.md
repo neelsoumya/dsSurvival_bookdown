@@ -42,8 +42,6 @@ https://neelsoumya.github.io/dsSurvival_bookdown
 
   library(devtools)
 
-  devtools::install_github('neelsoumya/dsBaseClient')
-
   devtools::install_github('neelsoumya/dsSurvivalClient')
   
   install.packages('bookdown')
