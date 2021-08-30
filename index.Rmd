@@ -12,7 +12,23 @@ description: "This is a bookdown demonstrating how to build privacy preserving s
 
 # Prerequisites
 
-Please install R and R Studio. We assume that the reader is familiar with R.
+Please install R and R Studio. We assume that the reader is familiar with R and DataSHIELD.
+
+DataSHIELD is a platform for federated analysis of private data. DataSHIELD has a client-server architecture and this package has a client side and server side component.
+
+The client side package is called dsSurvivalClient:
+
+   https://github.com/neelsoumya/dsSurvivalClient
+
+The server side package is called dsSurvival:
+
+   https://github.com/neelsoumya/dsSurvival
+
+
+Install R Studio and the development environment as described below:
+    
+   https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
+
 
 We outline some of the prerequisites that need to be installed below:
 
