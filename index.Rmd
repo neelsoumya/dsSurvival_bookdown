@@ -12,7 +12,9 @@ description: "This is a bookdown demonstrating how to build privacy preserving s
 
 # Prerequisites
 
-Please install R and R Studio. We outline some of the prerequisites that need to be installed below.
+Please install R and R Studio. We assume that the reader is familiar with R.
+
+We outline some of the prerequisites that need to be installed below:
 
 
 ```{r eval=FALSE}
