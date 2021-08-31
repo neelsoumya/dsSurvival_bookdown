@@ -9,11 +9,11 @@ DataSHIELD has a client-server architecture and this package has a client side a
 
   * The server side package is called dsSurvival:
       
-        https://github.com/neelsoumya/dsSurvival
+      https://github.com/neelsoumya/dsSurvival
 
   * The client side package is called dsSurvivalClient:
       
-        https://github.com/neelsoumya/dsSurvivalClient
+      https://github.com/neelsoumya/dsSurvivalClient
 
 The complete bookdown is available here:
 
