@@ -117,7 +117,7 @@ connections <- DSI::datashield.login(logins = logindata, assign = TRUE, symbol =
 ```
 
 
-# Creating server-side variables for survival analysis
+## Creating server-side variables for survival analysis
 
 We now outline some steps for analysing survival data.
 
@@ -196,7 +196,7 @@ dsBaseClient::ds.ls()
 ```
 
 
-# Create survival object and call ds.coxph.SLMA()
+## Create survival object and call ds.coxph.SLMA()
 
 
 * use constructed Surv object in *ds.coxph.SLMA()*
@@ -236,7 +236,7 @@ coxph_model_strata <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$a
 summary(coxph_model_strata)
 ```
 
-# Summary of survival objects
+## Summary of survival objects
 
 We can also summarize a server-side object of type *survival::Surv()*
 using a call to *ds.coxphSummary()*. This will provide a non-disclosive
@@ -257,6 +257,7 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 # dsBaseClient::ds.summary(x = 'surv_object')
 # dsBaseClient::ds.class(x = 'surv_object')
 # dsBaseClient::ds.mean(x='surv_object')
+
 #################################
 # TODO: Plot survival curves
 #################################
@@ -285,10 +286,10 @@ dsBaseClient::ds.ls()
 ```
 
 
-# Diagnostics for Cox proportional hazards models
+## Diagnostics for Cox proportional hazards models
 
 We have also created functions to test for the assumptions of 
-Cox proportional hazards models.
+Cox proportional hazards models. The functions are shown below:
 
 ```
 dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female',
@@ -310,7 +311,7 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 
 
 
-# Meta-analyze hazard ratios
+## Meta-analyze hazard ratios
 
 We now outline how the hazard ratios from the survival models are meta-analyzed. 
 We use the *metafor* package for meta-analysis. We show the summary of an 
@@ -321,7 +322,7 @@ dsSurvivalClient).
 The log-hazard ratios and their standard errors from each study can be
 found after running *ds.coxphSLMA()*
 
-The hazard ratios can then be meta-analyzed:
+The hazard ratios can then be meta-analyzed by running the following commands:
 
 ```
 input_logHR = c(coxph_model_full$study1$coefficients[1,2], 
