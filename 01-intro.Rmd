@@ -70,8 +70,6 @@ library(tinytex)
 library(survival)
 library(metafor)
 library(ggplot2)
-# library(survminer)
-#library(dsSurvival)
 library(dsSurvivalClient)
 require('DSI')
 require('DSOpal')
@@ -162,6 +160,7 @@ ds.asNumeric(x.name = "D$endtime",
 
 
 ```{r, include=FALSE}
+
 # make sure that the outcome is numeric 
 ds.asNumeric(x.name = "D$cens",
              newobj = "EVENT",
