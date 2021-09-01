@@ -6,3 +6,5 @@ This bookdown shows how to build privacy preserving survival models using dsSurv
 * https://github.com/neelsoumya/dsSurvivalClient
 
 * https://github.com/neelsoumya/dsSurvival
+
+* https://github.com/datashield
