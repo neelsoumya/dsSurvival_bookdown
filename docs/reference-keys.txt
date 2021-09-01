@@ -8,3 +8,5 @@ summary-of-survival-objects
 diagnostics-for-cox-proportional-hazards-models
 meta-analyze-hazard-ratios
 summary
+fig:unnamed-chunk-7
+survival-models
