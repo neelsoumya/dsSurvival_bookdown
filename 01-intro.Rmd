@@ -18,6 +18,12 @@ and meta-analyzing hazard ratios in the DataSHIELD platform.
 We used the **bookdown** package [@R-bookdown], R Markdown and **knitr** [@xie2015] for this document. Our package **dsSurvival** [@Banerjeef] uses the **metafor** package for meta-analysis [@Viechtbauer2010].
 
 
+## Survival models
+
+Survival models are used extensively in healthcare. Previously building survival models in DataSHIELD involved building piecewise exponential regression models. This is an approximation and involves having to define appropriate time buckets. A lack of familiarity with this approach also makes people suspicious. 
+
+The scope of our package implemenation is restricted to being study-level meta-analysis (SLMA) rather than full likelihood.
+
 
 # Computational workflow
 
