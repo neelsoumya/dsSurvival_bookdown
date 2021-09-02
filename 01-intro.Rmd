@@ -125,12 +125,21 @@ connections <- DSI::datashield.login(logins = logindata, assign = TRUE, symbol =
 
 We now outline some steps for analysing survival data.
 
+We show this using synthetic data. There are 3 data sets that are held on the same server but can be considered separate.
+
+The cens variable has the event information and the survtime variable has the time information. There is also age and gender information.
+
+We will look at how age and gender affect survival time and then meta-analyze the hazard ratios.
+
+
+
 * make sure that the outcome variable is numeric 
 
 ```
 ds.asNumeric(x.name = "D$cens",
              newobj = "EVENT",
              datasources = connections)
+	     
 ds.asNumeric(x.name = "D$survtime",
              newobj = "SURVTIME",
              datasources = connections)
@@ -210,6 +219,7 @@ dsBaseClient::ds.ls()
 dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
                       event = 'EVENT', objectname='surv_object',
                       type='counting')
+		      
 coxph_model_full <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
 ```
 
