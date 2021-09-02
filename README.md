@@ -56,6 +56,12 @@ https://neelsoumya.github.io/dsSurvival_bookdown
 
   install.packages('metafor')
   
+  install.packages('DSOpal')
+
+  install.packages('DSI')
+
+  install.packages('opalr')
+  
   ```
 
 
