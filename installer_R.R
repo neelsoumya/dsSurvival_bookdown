@@ -13,6 +13,11 @@ library(devtools)
 devtools::install_github('datashield/dsBaseClient@6.1.1')
 library(dsBaseClient)
  
+install.packages('DSOpal')
+install.packages('DSI')
+install.packages('opalr')
+
+
 devtools::install_github('https://github.com/datashield/opal')
 library(opal)
 
