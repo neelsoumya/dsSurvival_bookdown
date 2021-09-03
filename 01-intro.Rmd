@@ -29,7 +29,6 @@ The scope of our package implemenation is restricted to being study-level meta-a
 
 The computational steps are outlined below. 
 The first step is connecting to the server and loading the survival data.
-We assume that the reader is familiar with these details.
 
 ```
 
@@ -123,7 +122,7 @@ connections <- DSI::datashield.login(logins = logindata, assign = TRUE, symbol =
 
 ## Creating server-side variables for survival analysis
 
-We now outline some steps for analysing survival data.
+We now outline the steps for analysing survival data.
 
 We show this using synthetic data. There are 3 data sets that are held on the same server but can be considered separate.
 
