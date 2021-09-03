@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-01" />
+<meta name="date" content="2021-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -138,7 +138,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#survival-models"><i class="fa fa-check"></i><b>2.1</b> Survival models</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="computational-workflow.html"><a href="computational-workflow.html"><i class="fa fa-check"></i><b>3</b> Computational workflow</a><ul>
 <li class="chapter" data-level="3.1" data-path="computational-workflow.html"><a href="computational-workflow.html#creating-server-side-variables-for-survival-analysis"><i class="fa fa-check"></i><b>3.1</b> Creating server-side variables for survival analysis</a></li>
 <li class="chapter" data-level="3.2" data-path="computational-workflow.html"><a href="computational-workflow.html#create-survival-object-and-call-ds.coxph.slma"><i class="fa fa-check"></i><b>3.2</b> Create survival object and call ds.coxph.SLMA()</a></li>
@@ -171,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">dsSurvival: Privacy preserving survival models in DataSHIELD</h1>
 <p class="author"><em>Soumya Banerjee and Tom R P Bishop</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-09-01</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-09-03</em></p>
 </div>
 <div id="prerequisites" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
@@ -198,7 +200,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-12"><a href="index.html#cb1-12"></a></span>
 <span id="cb1-13"><a href="index.html#cb1-13"></a><span class="kw">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
 <span id="cb1-14"><a href="index.html#cb1-14"></a></span>
-<span id="cb1-15"><a href="index.html#cb1-15"></a><span class="kw">install.packages</span>(<span class="st">&#39;metafor&#39;</span>)</span></code></pre></div>
+<span id="cb1-15"><a href="index.html#cb1-15"></a><span class="kw">install.packages</span>(<span class="st">&#39;metafor&#39;</span>)</span>
+<span id="cb1-16"><a href="index.html#cb1-16"></a></span>
+<span id="cb1-17"><a href="index.html#cb1-17"></a><span class="kw">install.packages</span>(<span class="st">&#39;DSOpal&#39;</span>)</span>
+<span id="cb1-18"><a href="index.html#cb1-18"></a></span>
+<span id="cb1-19"><a href="index.html#cb1-19"></a><span class="kw">install.packages</span>(<span class="st">&#39;DSI&#39;</span>)</span>
+<span id="cb1-20"><a href="index.html#cb1-20"></a></span>
+<span id="cb1-21"><a href="index.html#cb1-21"></a><span class="kw">install.packages</span>(<span class="st">&#39;opalr&#39;</span>)</span></code></pre></div>
 <!-- Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`. -->
 <!-- To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX <https://yihui.org/tinytex/>. -->
 
