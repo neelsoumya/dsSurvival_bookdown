@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-03" />
+<meta name="date" content="2021-09-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -244,6 +244,7 @@ ds.asNumeric(x.name = &quot;D$endtime&quot;,
 </div>
 <div id="create-survival-object-and-call-ds.coxph.slma" class="section level2">
 <h2><span class="header-section-number">3.2</span> Create survival object and call ds.coxph.SLMA()</h2>
+<p>There are two options to generate the survival object. You can generate it separately or in line.</p>
 <ul>
 <li>use constructed Surv object in <em>ds.coxph.SLMA()</em></li>
 </ul>
@@ -285,6 +286,8 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
 </code></pre>
 <p>A diagnostic summary is shown below.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
+<pre><code>## 
+  Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
   Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
@@ -442,6 +445,10 @@ from the dsSurvivalClient function <em>ds.coxphSLMA()</em>.</p>
 Figure 3.1: Example forest plot of meta-analyzed hazard ratios.
 </p>
 </div>
+<p>Finally, once you have finished your analysis, you can disconnect from the server(s) using the following command:</p>
+<pre><code>
+DSI::datashield.logout(conns = connections)
+</code></pre>
 <div style="page-break-after: always;"></div>
 <ul>
 <li><p><a href="https://github.com/datashield" class="uri">https://github.com/datashield</a></p></li>
