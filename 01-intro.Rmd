@@ -275,31 +275,6 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 # dsBaseClient::ds.class(x = 'surv_object')
 # dsBaseClient::ds.mean(x='surv_object')
 
-#################################
-# TODO: Plot survival curves
-#################################
-# fit <- survival::survfit(formula = 'surv_object~D$age+D$female', data = 'D')
-# need ds.survfit() and survfitDS()
-# fit_model <- ds.survfit(coxph_model[1])
-# plot(fit_model)
-# TODO:
-# plot(survfit_km, fun="cloglog")
-# TODO: 
-# ggplot like functionality see other functions
-# In dsBaseClient::
-# ds.survfit()
-#         datashield.aggregate("survfitDS", ....)
-#          return (the fit model)
-# In dsBase::
-# survfitDS(coxph_model)  
-#               fit_model <- survival::survfit(coxph_model, newdata = 'D')
-#               return (fit_model)
-# TODO: dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
-# verify that object has been created
-dsBaseClient::ds.ls()
-# ERROR summary of survfit not allowed
-# dsBaseClient::ds.summary(x='survfit_object')
-# dsBaseClient::ds.mean(x='survfit_object')
 
 ```
 
@@ -388,11 +363,11 @@ DSI::datashield.logout(conns = connections)
 ```
 
 
-  * https://github.com/datashield
-  
-  * http://www.metafor-project.org
-  
-  * https://github.com/neelsoumya/dsSurvival
+* https://github.com/datashield
 
-  * https://github.com/neelsoumya/dsSurvivalClient
-  
+* http://www.metafor-project.org
+
+* https://github.com/neelsoumya/dsSurvival
+
+* https://github.com/neelsoumya/dsSurvivalClient
+
