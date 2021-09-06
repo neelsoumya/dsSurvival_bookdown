@@ -211,6 +211,7 @@ dsBaseClient::ds.ls()
 
 ## Create survival object and call ds.coxph.SLMA()
 
+There are two options to generate the survival object. You can generate it separately or in line.
 
 * use constructed Surv object in *ds.coxph.SLMA()*
 
@@ -243,8 +244,10 @@ summary(coxph_model_strata)
 # 1. use constructed surv object in coxph
 dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
 coxph_model_full <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+
 # 2. use direct inline call
 dsSurvivalClient::ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age+D$female', dataName = 'D', datasources = connections)
+
 # 3. Call with strata()
 coxph_model_strata <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+survival::strata(D$female)')
 summary(coxph_model_strata)
@@ -297,6 +300,7 @@ dsBaseClient::ds.ls()
 # ERROR summary of survfit not allowed
 # dsBaseClient::ds.summary(x='survfit_object')
 # dsBaseClient::ds.mean(x='survfit_object')
+
 ```
 
 
