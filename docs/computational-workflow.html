@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-06" />
+<meta name="date" content="2021-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -262,6 +262,7 @@ coxph_model_full &lt;- dsSurvivalClient::ds.coxph.SLMA(formula = &#39;surv_objec
 <ul>
 <li>call with <em>survival::strata()</em></li>
 </ul>
+<p>The strata() option allows us to relax some of the proportional hazards assumptions. It allows fitting of a separate baseline hazard function within each strata.</p>
 <pre><code>coxph_model_strata &lt;- dsSurvivalClient::ds.coxph.SLMA(formula = &#39;surv_object~D$age + 
                           survival::strata(D$female)&#39;)
 summary(coxph_model_strata)</code></pre>
@@ -290,6 +291,7 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
+  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
   Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
