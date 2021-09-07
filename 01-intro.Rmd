@@ -22,7 +22,7 @@ We used the **bookdown** package [@R-bookdown], R Markdown and **knitr** [@xie20
 
 Survival models are used extensively in healthcare. Previously building survival models in DataSHIELD involved building piecewise exponential regression models. This is an approximation and involves having to define appropriate time buckets. A lack of familiarity with this approach also makes people suspicious. 
 
-The scope of our package implemenation is restricted to being study-level meta-analysis (SLMA) rather than full likelihood.
+The scope of our package implementation is restricted to being study-level meta-analysis (SLMA) rather than full likelihood.
 
 
 # Computational workflow
@@ -232,6 +232,8 @@ dsSurvivalClient::ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EV
 ```
 
 * call with *survival::strata()*
+
+The strata() option allows us to relax some of the proportional hazards assumptions. It allows fitting of a separate baseline hazard function within each strata.
 
 ```
 coxph_model_strata <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age + 
