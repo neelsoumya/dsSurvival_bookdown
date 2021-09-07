@@ -5,6 +5,11 @@ This is a bookdown with executable code demonstrating how to use the dsSurvival 
 
 DataSHIELD is a platform for federated analysis of private data. This package can be used to build survival models, Cox proportional hazards models and Cox regression models.
 
+The complete bookdown is available here:
+
+https://neelsoumya.github.io/dsSurvival_bookdown
+
+
 DataSHIELD has a client-server architecture and this package has a client side and server side component.
 
   * The server side package is called dsSurvival:
@@ -15,9 +20,14 @@ DataSHIELD has a client-server architecture and this package has a client side a
       
       https://github.com/neelsoumya/dsSurvivalClient
 
+
+
+## Bookdown
+
 The complete bookdown is available here:
 
 https://neelsoumya.github.io/dsSurvival_bookdown
+
 
 
 ## Installation
