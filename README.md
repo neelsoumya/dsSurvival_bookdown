@@ -82,12 +82,6 @@ See the bookdown below for a complete tutorial:
 https://neelsoumya.github.io/dsSurvival_bookdown
 
 
-You can also see vignettes and tutorials below:
-
-https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
-
-https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
-
 
 A minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
 
@@ -103,7 +97,7 @@ The bookdown can be compiled by typing the following commands:
 
 ## Contact
 
-Soumya Banerjee and Tom R P Bishop
+Soumya Banerjee and Tom R. P. Bishop
 
 
 
