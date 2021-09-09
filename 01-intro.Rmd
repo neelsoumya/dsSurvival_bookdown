@@ -355,9 +355,7 @@ metafor::forest.rma(x = meta_model)
 Finally, once you have finished your analysis, you can disconnect from the server(s) using the following command:
 
 ```
-
 DSI::datashield.logout(conns = connections)
-
 ```
 
 \newpage
