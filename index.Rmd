@@ -16,7 +16,7 @@ This is a bookdown with executable code demonstrating how to use the dsSurvival 
 
 # Prerequisites
 
-Please install R and R Studio. We assume that the reader is familiar with R and DataSHIELD.
+This is a bookdown with executable code demonstrating how to use the dsSurvival package to create privacy preserving survival models in DataSHIELD. dsSurvival builds privacy preserving survival models.
 
 DataSHIELD is a platform for federated analysis of private data. DataSHIELD has a client-server architecture and this package has a client side and server side component.
 
@@ -29,10 +29,16 @@ The server side package is called dsSurvival:
    https://github.com/neelsoumya/dsSurvival
 
 
+
+Please install R and R Studio. 
+
+
 Install R Studio and the development environment as described below:
     
    https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
 
+
+We assume that the reader is familiar with R and DataSHIELD.
 
 We outline some of the prerequisites that need to be installed below:
 
