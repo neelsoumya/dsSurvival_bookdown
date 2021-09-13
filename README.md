@@ -24,7 +24,7 @@ DataSHIELD has a client-server architecture and this package has a client side a
 
 ## Bookdown
 
-The complete bookdown, tutorial and vignette with executable code and synthetic data is available here:
+The complete bookdown, tutorial, vignette with executable code and synthetic data is available here:
 
 https://neelsoumya.github.io/dsSurvival_bookdown
 
