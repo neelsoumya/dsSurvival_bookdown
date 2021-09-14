@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-13" />
+<meta name="date" content="2021-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -245,6 +245,7 @@ ds.asNumeric(x.name = &quot;D$endtime&quot;,
 <div id="create-survival-object-and-call-ds.coxph.slma" class="section level2">
 <h2><span class="header-section-number">3.2</span> Create survival object and call ds.coxph.SLMA()</h2>
 <p>There are two options to generate the survival object. You can generate it separately or in line.</p>
+<p>If a survival object is generated separately, it is stored on the server and can be used later in an assign function ( ds.coxphSLMAassign() ). The motivation for creating the model on the server side is inspired from the ds.glmassign functions. This allows the survival model to be stored on the server and can be used later for diagnostics.</p>
 <ul>
 <li>use constructed Surv object in <em>ds.coxph.SLMA()</em></li>
 </ul>
@@ -291,7 +292,6 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
-  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
   Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
@@ -312,7 +312,6 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
 ## D$female  8.04  1  0.0046
 ## GLOBAL   23.31  2 8.7e-06</code></pre>
 <pre><code>## 
-  Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 0s
   Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 0s</code></pre>
 <pre><code>## $study1
 ## Call:
