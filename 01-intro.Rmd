@@ -213,6 +213,9 @@ dsBaseClient::ds.ls()
 
 There are two options to generate the survival object. You can generate it separately or in line.
 
+If a survival object is generated separately, it is stored on the server and can be used later in an assign function (  ds.coxphSLMAassign() ). The motivation for creating the model on the server side is inspired from the ds.glmassign functions. This allows the survival model to be stored on the server and can be used later for diagnostics.
+
+
 * use constructed Surv object in *ds.coxph.SLMA()*
 
 ```
