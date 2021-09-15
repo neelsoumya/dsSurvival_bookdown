@@ -262,7 +262,8 @@ summary(coxph_model_strata)
 
 We can also summarize a server-side object of type *survival::Surv()*
 using a call to *ds.coxphSummary()*. This will provide a non-disclosive
-summary of the server-side object. An example call is shown below:
+summary of the server-side object. The server-side survival object can be created using ds.coxphSLMAassign().
+An example call is shown below:
 
 
 ```
@@ -287,7 +288,7 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 ## Diagnostics for Cox proportional hazards models
 
 We have also created functions to test for the assumptions of 
-Cox proportional hazards models. The functions are shown below:
+Cox proportional hazards models. The function calls are shown below:
 
 ```
 dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female',
