@@ -128,7 +128,7 @@ We show this using synthetic data. There are 3 data sets that are held on the sa
 
 The cens variable has the event information and the survtime variable has the time information. There is also age and gender information.
 
-We will look at how age and gender affect survival time and then meta-analyze the hazard ratios.
+We will look at how age and gender affect survival time and then meta-analyze the hazard ratios from the survival model.
 
 
 
@@ -300,7 +300,7 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 
 ```
 
-A diagnostic summary is shown below. 
+A diagnostic summary is shown below. These diagnostics can allow an analyst to determine if the proportional hazards assumption in Cox proportional hazards models is satisfied. If the p-values shown below are greater than 0.05 for any co-variate, then the proportional hazards assumption is correct for that co-variate.
 
 ```{r, echo=FALSE}
 dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female', objectname = 'coxph_serverside')
