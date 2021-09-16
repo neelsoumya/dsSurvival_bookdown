@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-14" />
+<meta name="date" content="2021-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -209,7 +209,7 @@ connections &lt;- DSI::datashield.login(logins = logindata, assign = TRUE, symbo
 <p>We now outline the steps for analysing survival data.</p>
 <p>We show this using synthetic data. There are 3 data sets that are held on the same server but can be considered separate.</p>
 <p>The cens variable has the event information and the survtime variable has the time information. There is also age and gender information.</p>
-<p>We will look at how age and gender affect survival time and then meta-analyze the hazard ratios.</p>
+<p>We will look at how age and gender affect survival time and then meta-analyze the hazard ratios from the survival model.</p>
 <ul>
 <li>make sure that the outcome variable is numeric</li>
 </ul>
@@ -272,13 +272,15 @@ summary(coxph_model_strata)</code></pre>
 <h2><span class="header-section-number">3.3</span> Summary of survival objects</h2>
 <p>We can also summarize a server-side object of type <em>survival::Surv()</em>
 using a call to <em>ds.coxphSummary()</em>. This will provide a non-disclosive
-summary of the server-side object. An example call is shown below:</p>
+summary of the server-side object. The server-side survival object can be created using ds.coxphSLMAassign().
+An example call is shown below:</p>
 <pre><code>dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)</code></pre>
 </div>
 <div id="diagnostics-for-cox-proportional-hazards-models" class="section level2">
 <h2><span class="header-section-number">3.4</span> Diagnostics for Cox proportional hazards models</h2>
 <p>We have also created functions to test for the assumptions of
-Cox proportional hazards models. The functions are shown below:</p>
+Cox proportional hazards models. This requires a call to the function ds.cox.zphSLMA. Before the call, a server-side object has to be created using the assign function ds.coxphSLMAassign().
+All the function calls are shown below:</p>
 <pre><code>dsSurvivalClient::ds.coxphSLMAassign(formula = &#39;surv_object~D$age+D$female&#39;,
                             objectname = &#39;coxph_serverside&#39;)
                 
@@ -286,7 +288,7 @@ dsSurvivalClient::ds.cox.zphSLMA(fit = &#39;coxph_serverside&#39;)
 
 dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
 </code></pre>
-<p>A diagnostic summary is shown below.</p>
+<p>A diagnostic summary is shown below. These diagnostics can allow an analyst to determine if the proportional hazards assumption in Cox proportional hazards models is satisfied. If the p-values shown below are greater than 0.05 for any co-variate, then the proportional hazards assumption is correct for that co-variate.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
 <pre><code>## 
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
