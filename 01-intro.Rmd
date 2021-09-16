@@ -179,33 +179,32 @@ ds.asNumeric(x.name = "D$endtime",
 ds.asNumeric(x.name = "D$cens",
              newobj = "EVENT",
              datasources = connections)
+
 ds.asNumeric(x.name = "D$survtime",
              newobj = "SURVTIME",
              datasources = connections)
+
 # convert time id variable to a factor 
 ds.asFactor(input.var.name = "D$time.id",
             newobj = "TID",
             datasources = connections)
+
 # create in the server-side the log(survtime) variable
 ds.log(x = "D$survtime",
        newobj = "log.surv",
        datasources = connections)
+
 # create start time variable
 ds.asNumeric(x.name = "D$starttime",
              newobj = "STARTTIME",
              datasources = connections)
+
 # create end time variable
 ds.asNumeric(x.name = "D$endtime",
              newobj = "ENDTIME",
              datasources = connections)
-# check which variables exist
-dsBaseClient::ds.ls()
-# call new function modify NAMESPACE and DESCRIPTION
-# call coxph server side
-# client side function is here:
-# https://github.com/neelsoumya/dsBaseClient/blob/absolute_newbie_client/R/ds.coxph.SLMA.R
-# server side function is here:
-# https://github.com/neelsoumya/dsBase/blob/absolute_newbie/R/coxphSLMADS.R
+
+
 ```
 
 
@@ -246,6 +245,7 @@ summary(coxph_model_strata)
 
 
 ```{r, include=FALSE}
+
 # 1. use constructed surv object in coxph
 dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
 coxph_model_full <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
@@ -256,6 +256,7 @@ dsSurvivalClient::ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EV
 # 3. Call with strata()
 coxph_model_strata <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+survival::strata(D$female)')
 summary(coxph_model_strata)
+
 ```
 
 ## Summary of survival objects
@@ -288,7 +289,8 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 ## Diagnostics for Cox proportional hazards models
 
 We have also created functions to test for the assumptions of 
-Cox proportional hazards models. The function calls are shown below:
+Cox proportional hazards models. This requires a call to the function ds.cox.zphSLMA. Before the call, a server-side object has to be created using the assign function ds.coxphSLMAassign().
+All the function calls are shown below:
 
 ```
 dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female',
