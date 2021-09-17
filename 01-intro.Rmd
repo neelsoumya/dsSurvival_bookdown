@@ -290,6 +290,7 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 
 We have also created functions to test for the assumptions of 
 Cox proportional hazards models. This requires a call to the function ds.cox.zphSLMA. Before the call, a server-side object has to be created using the assign function ds.coxphSLMAassign().
+
 All the function calls are shown below:
 
 ```
@@ -302,7 +303,17 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 
 ```
 
-A diagnostic summary is shown below. These diagnostics can allow an analyst to determine if the proportional hazards assumption in Cox proportional hazards models is satisfied. If the p-values shown below are greater than 0.05 for any co-variate, then the proportional hazards assumption is correct for that co-variate.
+These diagnostics can allow an analyst to determine if the proportional hazards assumption in Cox proportional hazards models is satisfied. If the p-values shown below are greater than 0.05 for any co-variate, then the proportional hazards assumption is correct for that co-variate.
+
+If the proportional hazards assumptions are violated (p-values less than 0.05), then you have to modify the model. Modifications can include introducing strata or time-dependent covariates. Please see the links below for more information on this.
+
+* https://stats.stackexchange.com/questions/317336/interpreting-r-coxph-cox-zph
+
+* https://stats.stackexchange.com/questions/144923/extended-cox-model-and-cox-zph/238964#238964
+
+
+A diagnostic summary is shown below. 
+
 
 ```{r, echo=FALSE}
 dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female', objectname = 'coxph_serverside')
