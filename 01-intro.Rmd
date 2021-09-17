@@ -363,7 +363,8 @@ summary(meta_model)
 ```
 
 We now show a forest plot with the meta-analyzed hazard ratios. The hazard ratios come
-from the dsSurvivalClient function *ds.coxphSLMA()*. 
+from the dsSurvivalClient function *ds.coxphSLMA()*. The plot shows the coefficients for age in the survival model.
+
 
 ```{r fig.cap="Example forest plot of meta-analyzed hazard ratios.", echo=FALSE}
 metafor::forest.rma(x = meta_model)
