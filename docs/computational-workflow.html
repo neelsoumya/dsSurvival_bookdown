@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-16" />
+<meta name="date" content="2021-09-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -279,8 +279,8 @@ An example call is shown below:</p>
 <div id="diagnostics-for-cox-proportional-hazards-models" class="section level2">
 <h2><span class="header-section-number">3.4</span> Diagnostics for Cox proportional hazards models</h2>
 <p>We have also created functions to test for the assumptions of
-Cox proportional hazards models. This requires a call to the function ds.cox.zphSLMA. Before the call, a server-side object has to be created using the assign function ds.coxphSLMAassign().
-All the function calls are shown below:</p>
+Cox proportional hazards models. This requires a call to the function ds.cox.zphSLMA. Before the call, a server-side object has to be created using the assign function ds.coxphSLMAassign().</p>
+<p>All the function calls are shown below:</p>
 <pre><code>dsSurvivalClient::ds.coxphSLMAassign(formula = &#39;surv_object~D$age+D$female&#39;,
                             objectname = &#39;coxph_serverside&#39;)
                 
@@ -288,14 +288,18 @@ dsSurvivalClient::ds.cox.zphSLMA(fit = &#39;coxph_serverside&#39;)
 
 dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
 </code></pre>
-<p>A diagnostic summary is shown below. These diagnostics can allow an analyst to determine if the proportional hazards assumption in Cox proportional hazards models is satisfied. If the p-values shown below are greater than 0.05 for any co-variate, then the proportional hazards assumption is correct for that co-variate.</p>
+<p>These diagnostics can allow an analyst to determine if the proportional hazards assumption in Cox proportional hazards models is satisfied. If the p-values shown below are greater than 0.05 for any co-variate, then the proportional hazards assumption is correct for that co-variate.</p>
+<p>If the proportional hazards assumptions are violated (p-values less than 0.05), then you have to modify the model. Modifications can include introducing strata or time-dependent covariates. Please see the links below for more information on this.</p>
+<ul>
+<li><p><a href="https://stats.stackexchange.com/questions/317336/interpreting-r-coxph-cox-zph" class="uri">https://stats.stackexchange.com/questions/317336/interpreting-r-coxph-cox-zph</a></p></li>
+<li><p><a href="https://stats.stackexchange.com/questions/144923/extended-cox-model-and-cox-zph/238964#238964" class="uri">https://stats.stackexchange.com/questions/144923/extended-cox-model-and-cox-zph/238964#238964</a></p></li>
+</ul>
+<p>A diagnostic summary is shown below.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
 <pre><code>## 
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
-  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
-  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
 ##          chisq df    p
@@ -315,6 +319,7 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
 ## D$female  8.04  1  0.0046
 ## GLOBAL   23.31  2 8.7e-06</code></pre>
 <pre><code>## 
+  Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 0s
   Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 0s</code></pre>
 <pre><code>## $study1
 ## Call:
@@ -442,7 +447,7 @@ metafor::rma(log_hazard_ratio, sei = se_hazard_ratio, method = &#39;REML&#39;)
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>We now show a forest plot with the meta-analyzed hazard ratios. The hazard ratios come
-from the dsSurvivalClient function <em>ds.coxphSLMA()</em>.</p>
+from the dsSurvivalClient function <em>ds.coxphSLMA()</em>. The plot shows the coefficients for age in the survival model.</p>
 <div class="figure"><span id="fig:unnamed-chunk-9"></span>
 <img src="survival_bookdown_files/figure-html/unnamed-chunk-9-1.png" alt="Example forest plot of meta-analyzed hazard ratios." width="672" />
 <p class="caption">
