@@ -30,7 +30,7 @@ The scope of our package implementation is restricted to being study-level meta-
 The computational steps are outlined below. 
 The first step is connecting to the server and loading the survival data.
 
-```
+```{r eval=FALSE}
 
 library(knitr)
 library(rmarkdown)
@@ -134,7 +134,8 @@ We will look at how age and gender affect survival time and then meta-analyze th
 
 * make sure that the outcome variable is numeric 
 
-```
+```{r eval=FALSE}
+
 ds.asNumeric(x.name = "D$cens",
              newobj = "EVENT",
              datasources = connections)
