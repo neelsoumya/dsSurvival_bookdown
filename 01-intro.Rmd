@@ -147,7 +147,8 @@ ds.asNumeric(x.name = "D$survtime",
 
 *  convert time id variable to a factor 
 
-```
+```{r eval=FALSE}
+
 ds.asFactor(input.var.name = "D$time.id",
             newobj = "TID",
             datasources = connections)
@@ -155,7 +156,8 @@ ds.asFactor(input.var.name = "D$time.id",
 
 *  create in the server-side the log(survtime) variable
 
-```
+```{r eval=FALSE}
+
 ds.log(x = "D$survtime",
        newobj = "log.surv",
        datasources = connections)
@@ -163,7 +165,8 @@ ds.log(x = "D$survtime",
 
 *  create start time variable
 
-```
+```{r eval=FALSE}
+
 ds.asNumeric(x.name = "D$starttime",
              newobj = "STARTTIME",
              datasources = connections)
@@ -218,7 +221,7 @@ If a survival object is generated separately, it is stored on the server and can
 
 * use constructed Surv object in *ds.coxph.SLMA()*
 
-```
+```{r eval=FALSE}
 dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
                       event = 'EVENT', objectname='surv_object',
                       type='counting')
@@ -228,7 +231,7 @@ coxph_model_full <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age
 
 * use direct inline call to *survival::Surv()*
 
-```
+```{r eval=FALSE}
 dsSurvivalClient::ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age+D$female', 
                                 dataName = 'D', 
                                 datasources = connections)
@@ -238,7 +241,7 @@ dsSurvivalClient::ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EV
 
 The strata() option allows us to relax some of the proportional hazards assumptions. It allows fitting of a separate baseline hazard function within each strata.
 
-```
+```{r eval=FALSE}
 coxph_model_strata <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age + 
                           survival::strata(D$female)')
 summary(coxph_model_strata)
@@ -268,7 +271,7 @@ summary of the server-side object. The server-side survival object can be create
 An example call is shown below:
 
 
-```
+```{r eval=FALSE}
 dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 ```
 
@@ -294,7 +297,7 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 
 All the function calls are shown below:
 
-```
+```{r eval=FALSE}
 dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female',
                             objectname = 'coxph_serverside')
 			    
@@ -337,7 +340,7 @@ found after running *ds.coxphSLMA()*
 
 The hazard ratios can then be meta-analyzed by running the following commands:
 
-```
+```{r eval=FALSE}
 input_logHR = c(coxph_model_full$study1$coefficients[1,2], 
 		coxph_model_full$study2$coefficients[1,2], 
 		coxph_model_full$study3$coefficients[1,2])
@@ -373,7 +376,7 @@ metafor::forest.rma(x = meta_model)
 
 Finally, once you have finished your analysis, you can disconnect from the server(s) using the following command:
 
-```
+```{r eval=FALSE}
 DSI::datashield.logout(conns = connections)
 ```
 
