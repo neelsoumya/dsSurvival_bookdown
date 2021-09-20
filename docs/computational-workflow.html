@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-17" />
+<meta name="date" content="2021-09-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -174,36 +174,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> Computational workflow</h1>
 <p>The computational steps are outlined below.
 The first step is connecting to the server and loading the survival data.</p>
-<pre><code>
-library(knitr)
-library(rmarkdown)
-library(tinytex)
-library(survival)
-library(metafor)
-library(ggplot2)
-library(dsSurvivalClient)
-require(&#39;DSI&#39;)
-require(&#39;DSOpal&#39;)
-require(&#39;dsBaseClient&#39;)
-
-builder &lt;- DSI::newDSLoginBuilder()
-
-builder$append(server=&quot;server1&quot;, url=&quot;https://opal-sandbox.mrc-epid.cam.ac.uk&quot;,
-                user=&quot;dsuser&quot;, password=&quot;password&quot;, 
-               table = &quot;SURVIVAL.EXPAND_NO_MISSING1&quot;)
-
-builder$append(server=&quot;server2&quot;, url=&quot;https://opal-sandbox.mrc-epid.cam.ac.uk&quot;,
-               user=&quot;dsuser&quot;, password=&quot;password&quot;, 
-               table = &quot;SURVIVAL.EXPAND_NO_MISSING2&quot;)
-
-builder$append(server=&quot;server3&quot;, url=&quot;https://opal-sandbox.mrc-epid.cam.ac.uk&quot;,
-               user=&quot;dsuser&quot;, password=&quot;password&quot;, 
-               table = &quot;SURVIVAL.EXPAND_NO_MISSING3&quot;)          
-
-logindata &lt;- builder$build()
-
-connections &lt;- DSI::datashield.login(logins = logindata, assign = TRUE, symbol = &quot;D&quot;) 
-</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="computational-workflow.html#cb2-1"></a><span class="kw">library</span>(knitr)</span>
+<span id="cb2-2"><a href="computational-workflow.html#cb2-2"></a><span class="kw">library</span>(rmarkdown)</span>
+<span id="cb2-3"><a href="computational-workflow.html#cb2-3"></a><span class="kw">library</span>(tinytex)</span>
+<span id="cb2-4"><a href="computational-workflow.html#cb2-4"></a><span class="kw">library</span>(survival)</span>
+<span id="cb2-5"><a href="computational-workflow.html#cb2-5"></a><span class="kw">library</span>(metafor)</span>
+<span id="cb2-6"><a href="computational-workflow.html#cb2-6"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb2-7"><a href="computational-workflow.html#cb2-7"></a><span class="kw">library</span>(dsSurvivalClient)</span>
+<span id="cb2-8"><a href="computational-workflow.html#cb2-8"></a><span class="kw">require</span>(<span class="st">&#39;DSI&#39;</span>)</span>
+<span id="cb2-9"><a href="computational-workflow.html#cb2-9"></a><span class="kw">require</span>(<span class="st">&#39;DSOpal&#39;</span>)</span>
+<span id="cb2-10"><a href="computational-workflow.html#cb2-10"></a><span class="kw">require</span>(<span class="st">&#39;dsBaseClient&#39;</span>)</span>
+<span id="cb2-11"><a href="computational-workflow.html#cb2-11"></a></span>
+<span id="cb2-12"><a href="computational-workflow.html#cb2-12"></a>builder &lt;-<span class="st"> </span>DSI<span class="op">::</span><span class="kw">newDSLoginBuilder</span>()</span>
+<span id="cb2-13"><a href="computational-workflow.html#cb2-13"></a></span>
+<span id="cb2-14"><a href="computational-workflow.html#cb2-14"></a>builder<span class="op">$</span><span class="kw">append</span>(<span class="dt">server=</span><span class="st">&quot;server1&quot;</span>, <span class="dt">url=</span><span class="st">&quot;https://opal-sandbox.mrc-epid.cam.ac.uk&quot;</span>,</span>
+<span id="cb2-15"><a href="computational-workflow.html#cb2-15"></a>                <span class="dt">user=</span><span class="st">&quot;dsuser&quot;</span>, <span class="dt">password=</span><span class="st">&quot;password&quot;</span>, </span>
+<span id="cb2-16"><a href="computational-workflow.html#cb2-16"></a>               <span class="dt">table =</span> <span class="st">&quot;SURVIVAL.EXPAND_NO_MISSING1&quot;</span>)</span>
+<span id="cb2-17"><a href="computational-workflow.html#cb2-17"></a></span>
+<span id="cb2-18"><a href="computational-workflow.html#cb2-18"></a>builder<span class="op">$</span><span class="kw">append</span>(<span class="dt">server=</span><span class="st">&quot;server2&quot;</span>, <span class="dt">url=</span><span class="st">&quot;https://opal-sandbox.mrc-epid.cam.ac.uk&quot;</span>,</span>
+<span id="cb2-19"><a href="computational-workflow.html#cb2-19"></a>               <span class="dt">user=</span><span class="st">&quot;dsuser&quot;</span>, <span class="dt">password=</span><span class="st">&quot;password&quot;</span>, </span>
+<span id="cb2-20"><a href="computational-workflow.html#cb2-20"></a>               <span class="dt">table =</span> <span class="st">&quot;SURVIVAL.EXPAND_NO_MISSING2&quot;</span>)</span>
+<span id="cb2-21"><a href="computational-workflow.html#cb2-21"></a></span>
+<span id="cb2-22"><a href="computational-workflow.html#cb2-22"></a>builder<span class="op">$</span><span class="kw">append</span>(<span class="dt">server=</span><span class="st">&quot;server3&quot;</span>, <span class="dt">url=</span><span class="st">&quot;https://opal-sandbox.mrc-epid.cam.ac.uk&quot;</span>,</span>
+<span id="cb2-23"><a href="computational-workflow.html#cb2-23"></a>               <span class="dt">user=</span><span class="st">&quot;dsuser&quot;</span>, <span class="dt">password=</span><span class="st">&quot;password&quot;</span>, </span>
+<span id="cb2-24"><a href="computational-workflow.html#cb2-24"></a>               <span class="dt">table =</span> <span class="st">&quot;SURVIVAL.EXPAND_NO_MISSING3&quot;</span>)          </span>
+<span id="cb2-25"><a href="computational-workflow.html#cb2-25"></a></span>
+<span id="cb2-26"><a href="computational-workflow.html#cb2-26"></a>logindata &lt;-<span class="st"> </span>builder<span class="op">$</span><span class="kw">build</span>()</span>
+<span id="cb2-27"><a href="computational-workflow.html#cb2-27"></a></span>
+<span id="cb2-28"><a href="computational-workflow.html#cb2-28"></a>connections &lt;-<span class="st"> </span>DSI<span class="op">::</span><span class="kw">datashield.login</span>(<span class="dt">logins =</span> logindata, <span class="dt">assign =</span> <span class="ot">TRUE</span>, <span class="dt">symbol =</span> <span class="st">&quot;D&quot;</span>) </span></code></pre></div>
 <div id="creating-server-side-variables-for-survival-analysis" class="section level2">
 <h2><span class="header-section-number">3.1</span> Creating server-side variables for survival analysis</h2>
 <p>We now outline the steps for analysing survival data.</p>
@@ -213,13 +211,13 @@ connections &lt;- DSI::datashield.login(logins = logindata, assign = TRUE, symbo
 <ul>
 <li>make sure that the outcome variable is numeric</li>
 </ul>
-<pre><code>ds.asNumeric(x.name = &quot;D$cens&quot;,
-             newobj = &quot;EVENT&quot;,
-             datasources = connections)
-         
-ds.asNumeric(x.name = &quot;D$survtime&quot;,
-             newobj = &quot;SURVTIME&quot;,
-             datasources = connections)</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="computational-workflow.html#cb3-1"></a><span class="kw">ds.asNumeric</span>(<span class="dt">x.name =</span> <span class="st">&quot;D$cens&quot;</span>,</span>
+<span id="cb3-2"><a href="computational-workflow.html#cb3-2"></a>             <span class="dt">newobj =</span> <span class="st">&quot;EVENT&quot;</span>,</span>
+<span id="cb3-3"><a href="computational-workflow.html#cb3-3"></a>             <span class="dt">datasources =</span> connections)</span>
+<span id="cb3-4"><a href="computational-workflow.html#cb3-4"></a>         </span>
+<span id="cb3-5"><a href="computational-workflow.html#cb3-5"></a><span class="kw">ds.asNumeric</span>(<span class="dt">x.name =</span> <span class="st">&quot;D$survtime&quot;</span>,</span>
+<span id="cb3-6"><a href="computational-workflow.html#cb3-6"></a>             <span class="dt">newobj =</span> <span class="st">&quot;SURVTIME&quot;</span>,</span>
+<span id="cb3-7"><a href="computational-workflow.html#cb3-7"></a>             <span class="dt">datasources =</span> connections)</span></code></pre></div>
 <ul>
 <li>convert time id variable to a factor</li>
 </ul>
@@ -300,6 +298,7 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
+  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
 ##          chisq df    p
@@ -319,7 +318,6 @@ dsSurvivalClient::ds.coxphSummary(x = &#39;coxph_serverside&#39;)
 ## D$female  8.04  1  0.0046
 ## GLOBAL   23.31  2 8.7e-06</code></pre>
 <pre><code>## 
-  Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 0s
   Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 0s</code></pre>
 <pre><code>## $study1
 ## Call:
@@ -448,8 +446,8 @@ metafor::rma(log_hazard_ratio, sei = se_hazard_ratio, method = &#39;REML&#39;)
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>We now show a forest plot with the meta-analyzed hazard ratios. The hazard ratios come
 from the dsSurvivalClient function <em>ds.coxphSLMA()</em>. The plot shows the coefficients for age in the survival model.</p>
-<div class="figure"><span id="fig:unnamed-chunk-9"></span>
-<img src="survival_bookdown_files/figure-html/unnamed-chunk-9-1.png" alt="Example forest plot of meta-analyzed hazard ratios." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<img src="survival_bookdown_files/figure-html/unnamed-chunk-11-1.png" alt="Example forest plot of meta-analyzed hazard ratios." width="672" />
 <p class="caption">
 Figure 3.1: Example forest plot of meta-analyzed hazard ratios.
 </p>
