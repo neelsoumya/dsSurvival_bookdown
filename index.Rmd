@@ -30,7 +30,11 @@ The server side package is called dsSurvival:
 
 
 
-Please install R. Then install R Studio and the development environment as described below:
+Please install R. Then install R Studio 
+
+   https://www.rstudio.com/products/rstudio/download/preview/
+
+and the DATASHIELD development environment as described below:
     
    https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
 
