@@ -124,7 +124,7 @@ connections <- DSI::datashield.login(logins = logindata, assign = TRUE, symbol =
 
 We now outline the steps for analysing survival data.
 
-We show this using synthetic data. There are 3 data sets that are held on the same server but can be considered separate.
+We show this using synthetic data. There are 3 data sets that are held on the same server but can be considered to be on separate servers/sites.
 
 The cens variable has the event information and the survtime variable has the time information. There is also age and gender information.
 
