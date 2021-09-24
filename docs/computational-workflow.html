@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-22" />
+<meta name="date" content="2021-09-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -206,7 +206,7 @@ The first step is connecting to the server and loading the survival data.</p>
 <h2><span class="header-section-number">3.1</span> Creating server-side variables for survival analysis</h2>
 <p>We now outline the steps for analysing survival data.</p>
 <p>We show this using synthetic data. There are 3 data sets that are held on the same server but can be considered to be on separate servers/sites.</p>
-<p>The cens variable has the event information and the survtime variable has the time information. There is also age and gender information.</p>
+<p>The <strong>cens</strong> variable has the event information and the <strong>survtime</strong> variable has the time information. There is also age and gender information in the variables named <strong>age</strong> and <strong>female</strong>, respectively.</p>
 <p>We will look at how age and gender affect survival time and then meta-analyze the hazard ratios from the survival model.</p>
 <ul>
 <li>make sure that the outcome variable is numeric</li>
@@ -294,10 +294,12 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 <p>A diagnostic summary is shown below.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
 <pre><code>## 
+  Assigning study2 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$femal...
   Assigning study3 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$femal...
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
+  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
   Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
@@ -307,10 +309,10 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 ## GLOBAL   1.239  2 0.54
 ## 
 ## $study2
-##              chisq df    p
-## D$age    -1389.472  1 1.00
-## D$female     0.591  1 0.44
-## GLOBAL    -857.492  2 1.00
+##           chisq df       p
+## D$age    48.535  1 3.2e-12
+## D$female  0.938  1    0.33
+## GLOBAL   57.057  2 4.1e-13
 ## 
 ## $study3
 ##          chisq df       p
