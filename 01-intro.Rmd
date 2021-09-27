@@ -286,7 +286,6 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 # dsBaseClient::ds.class(x = 'surv_object')
 # dsBaseClient::ds.mean(x='surv_object')
 
-
 ```
 
 
@@ -309,7 +308,7 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 
 These diagnostics can allow an analyst to determine if the proportional hazards assumption in Cox proportional hazards models is satisfied. If the p-values shown below are greater than 0.05 for any co-variate, then the proportional hazards assumption is correct for that co-variate.
 
-If the proportional hazards assumptions are violated (p-values less than 0.05), then you have to modify the model. Modifications can include introducing strata or time-dependent covariates. Please see the links below for more information on this.
+If the proportional hazards assumptions are violated (p-values less than 0.05), then the analyst will have to modify the model. Modifications may include introducing strata or using time-dependent covariates. Please see the links below for more information on this:
 
 * https://stats.stackexchange.com/questions/317336/interpreting-r-coxph-cox-zph
 
@@ -320,9 +319,11 @@ A diagnostic summary is shown below.
 
 
 ```{r, echo=FALSE}
+
 dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female', objectname = 'coxph_serverside')
 dsSurvivalClient::ds.cox.zphSLMA(fit = 'coxph_serverside')
 dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
+
 ```
 
 
@@ -332,15 +333,15 @@ dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 We now outline how the hazard ratios from the survival models are meta-analyzed. 
 We use the *metafor* package for meta-analysis. We show the summary of an 
 example meta-analysis and a forest plot below. The forest plot shows a basic
-example of meta-analyzed hazard ratios from a survival model (analyzed in
-dsSurvivalClient).
+example of meta-analyzed hazard ratios from a survival model (analyzed in dsSurvivalClient).
 
 The log-hazard ratios and their standard errors from each study can be
 found after running *ds.coxphSLMA()*
 
-The hazard ratios can then be meta-analyzed by running the following commands:
+The hazard ratios can then be meta-analyzed by running the following commands (which gets the hazard ratios for age in the survival model):
 
 ```{r eval=FALSE}
+
 input_logHR = c(coxph_model_full$study1$coefficients[1,2], 
 		coxph_model_full$study2$coefficients[1,2], 
 		coxph_model_full$study3$coefficients[1,2])
