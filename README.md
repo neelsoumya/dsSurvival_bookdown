@@ -3,7 +3,7 @@
 
 This is a bookdown with executable code demonstrating how to use the dsSurvival package to create privacy preserving survival models in DataSHIELD. dsSurvival builds privacy preserving survival models.
 
-DataSHIELD is a platform for federated analysis of private data. This package can be used to build survival models, Cox proportional hazards models and Cox regression models.
+DataSHIELD is a platform for federated analysis of private data. This package can be used to build survival models, Cox proportional hazards models or Cox regression models.
 
 The complete bookdown is available here:
 
