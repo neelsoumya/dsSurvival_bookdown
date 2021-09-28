@@ -338,7 +338,8 @@ example of meta-analyzed hazard ratios from a survival model (analyzed in dsSurv
 The log-hazard ratios and their standard errors from each study can be
 found after running *ds.coxphSLMA()*
 
-The hazard ratios can then be meta-analyzed by running the following commands (which gets the hazard ratios for age in the survival model):
+The hazard ratios can then be meta-analyzed by running the commands shown below.
+These commands get the hazard ratios correspondng to age in the survival model.
 
 ```{r eval=FALSE}
 
@@ -372,7 +373,7 @@ from the dsSurvivalClient function *ds.coxphSLMA()*. The plot shows the coeffici
 
 
 ```{r fig.cap="Example forest plot of meta-analyzed hazard ratios.", echo=FALSE}
-metafor::forest.rma(x = meta_model)
+metafor::forest.rma(x = meta_model, digits = 4) # at = c(0.999, 1, 1.006),   # ticks for hazard ratio at these places
 ```    
 
 Finally, once you have finished your analysis, you can disconnect from the server(s) using the following command:
