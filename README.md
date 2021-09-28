@@ -32,21 +32,7 @@ https://neelsoumya.github.io/dsSurvival_bookdown
 
 ## Installation
 
-  ``` 
-
-  R -no-save < installer_R.R
-  
-  ```
-  
-  or
-  
-  run the script
-  
-  installer_R.R
-  
-  or
-  
-  ```
+```
   
   install.packages('devtools')
 
@@ -74,7 +60,23 @@ https://neelsoumya.github.io/dsSurvival_bookdown
   
   ```
 
+  or
 
+  ``` 
+
+  R -no-save < installer_R.R
+  
+  ```
+  
+  or
+  
+  run the script
+  
+  installer_R.R
+  
+ 
+  
+  
 ## Usage
 
 See the bookdown below for a complete tutorial:
@@ -94,6 +96,7 @@ The bookdown can be compiled by typing the following commands:
   bookdown::serve_book()
   
   ```
+
 
 ## Contact
 
