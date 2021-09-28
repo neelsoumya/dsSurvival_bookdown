@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-27" />
+<meta name="date" content="2021-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -294,11 +294,9 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 <p>A diagnostic summary is shown below.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
 <pre><code>## 
-  Assigning study3 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$femal...
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
-  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
   Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
@@ -319,6 +317,7 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 ## D$female  8.04  1  0.0046
 ## GLOBAL   23.31  2 8.7e-06</code></pre>
 <pre><code>## 
+  Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 0s
   Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 0s</code></pre>
 <pre><code>## $study1
 ## Call:
@@ -411,7 +410,8 @@ example meta-analysis and a forest plot below. The forest plot shows a basic
 example of meta-analyzed hazard ratios from a survival model (analyzed in dsSurvivalClient).</p>
 <p>The log-hazard ratios and their standard errors from each study can be
 found after running <em>ds.coxphSLMA()</em></p>
-<p>The hazard ratios can then be meta-analyzed by running the following commands (which gets the hazard ratios for age in the survival model):</p>
+<p>The hazard ratios can then be meta-analyzed by running the commands shown below.
+These commands get the hazard ratios correspondng to age in the survival model.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="computational-workflow.html#cb19-1"></a>input_logHR =<span class="st"> </span><span class="kw">c</span>(coxph_model_full<span class="op">$</span>study1<span class="op">$</span>coefficients[<span class="dv">1</span>,<span class="dv">2</span>], </span>
 <span id="cb19-2"><a href="computational-workflow.html#cb19-2"></a>        coxph_model_full<span class="op">$</span>study2<span class="op">$</span>coefficients[<span class="dv">1</span>,<span class="dv">2</span>], </span>
 <span id="cb19-3"><a href="computational-workflow.html#cb19-3"></a>        coxph_model_full<span class="op">$</span>study3<span class="op">$</span>coefficients[<span class="dv">1</span>,<span class="dv">2</span>])</span>
@@ -445,8 +445,8 @@ found after running <em>ds.coxphSLMA()</em></p>
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>We now show a forest plot with the meta-analyzed hazard ratios. The hazard ratios come
 from the dsSurvivalClient function <em>ds.coxphSLMA()</em>. The plot shows the coefficients for age in the survival model.</p>
-<div class="figure"><span id="fig:unnamed-chunk-20"></span>
-<img src="survival_bookdown_files/figure-html/unnamed-chunk-20-1.png" alt="Example forest plot of meta-analyzed hazard ratios." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-28"></span>
+<img src="survival_bookdown_files/figure-html/unnamed-chunk-28-1.png" alt="Example forest plot of meta-analyzed hazard ratios." width="672" />
 <p class="caption">
 Figure 3.1: Example forest plot of meta-analyzed hazard ratios.
 </p>
