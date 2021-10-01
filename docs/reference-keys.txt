@@ -1,4 +1,4 @@
-fig:unnamed-chunk-28
+fig:unnamed-chunk-20
 prerequisites
 intro
 survival-models

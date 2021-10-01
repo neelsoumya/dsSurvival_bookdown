@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-09-28" />
+<meta name="date" content="2021-10-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -294,10 +294,10 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 <p>A diagnostic summary is shown below.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
 <pre><code>## 
+  Assigning study3 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$femal...
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
-  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
 ##          chisq df    p
@@ -445,8 +445,8 @@ These commands get the hazard ratios correspondng to age in the survival model.<
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>We now show a forest plot with the meta-analyzed hazard ratios. The hazard ratios come
 from the dsSurvivalClient function <em>ds.coxphSLMA()</em>. The plot shows the coefficients for age in the survival model.</p>
-<div class="figure"><span id="fig:unnamed-chunk-28"></span>
-<img src="survival_bookdown_files/figure-html/unnamed-chunk-28-1.png" alt="Example forest plot of meta-analyzed hazard ratios." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-20"></span>
+<img src="survival_bookdown_files/figure-html/unnamed-chunk-20-1.png" alt="Example forest plot of meta-analyzed hazard ratios." width="672" />
 <p class="caption">
 Figure 3.1: Example forest plot of meta-analyzed hazard ratios.
 </p>
