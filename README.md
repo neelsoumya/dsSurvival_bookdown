@@ -77,7 +77,7 @@ https://neelsoumya.github.io/dsSurvival_bookdown
   
   or
   
-  run the script in R
+  run the following script in R
   
   installer_R.R
   
