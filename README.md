@@ -33,9 +33,7 @@ https://neelsoumya.github.io/dsSurvival_bookdown
 ## Installation
 
 
-* Install R and R Studio and the development environment as described below:
-
-    * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
+* Install R and R Studio 
 
 * In R, install the following packages
 
