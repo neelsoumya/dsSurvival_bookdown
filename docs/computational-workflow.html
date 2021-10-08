@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-10-01" />
+<meta name="date" content="2021-10-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -298,6 +298,8 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
+  Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
+  Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
   Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
 ##          chisq df    p
@@ -306,10 +308,10 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 ## GLOBAL   1.239  2 0.54
 ## 
 ## $study2
-##              chisq df    p
-## D$age    -1389.472  1 1.00
-## D$female     0.591  1 0.44
-## GLOBAL    -857.492  2 1.00
+##           chisq df       p
+## D$age    13.021  1 0.00031
+## D$female  0.454  1 0.50053
+## GLOBAL   16.073  2 0.00032
 ## 
 ## $study3
 ##          chisq df       p
@@ -317,7 +319,6 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 ## D$female  8.04  1  0.0046
 ## GLOBAL   23.31  2 8.7e-06</code></pre>
 <pre><code>## 
-  Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 0s
   Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 0s</code></pre>
 <pre><code>## $study1
 ## Call:
