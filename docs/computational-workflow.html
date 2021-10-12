@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-10-08" />
+<meta name="date" content="2021-10-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -294,13 +294,12 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 <p>A diagnostic summary is shown below.</p>
 <pre><code>## surv_object~D$age+D$female</code></pre>
 <pre><code>## 
-  Assigning study3 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$femal...
   Assigned expr. (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female,...</code></pre>
 <pre><code>## NULL</code></pre>
 <pre><code>## 
   Aggregating study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==&gt;---]  50% / 0s
   Aggregating study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;--]  75% / 0s
-  Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
+  Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 1s</code></pre>
 <pre><code>## $study1
 ##          chisq df    p
 ## D$age    1.022  1 0.31
@@ -308,10 +307,10 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 ## GLOBAL   1.239  2 0.54
 ## 
 ## $study2
-##           chisq df       p
-## D$age    13.021  1 0.00031
-## D$female  0.454  1 0.50053
-## GLOBAL   16.073  2 0.00032
+##            chisq df    p
+## D$age    -44.459  1 1.00
+## D$female   0.543  1 0.46
+## GLOBAL   -42.743  2 1.00
 ## 
 ## $study3
 ##          chisq df       p
@@ -319,6 +318,7 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 ## D$female  8.04  1  0.0046
 ## GLOBAL   23.31  2 8.7e-06</code></pre>
 <pre><code>## 
+  Aggregating study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====================&gt;--------]  75% / 0s
   Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 0s</code></pre>
 <pre><code>## $study1
 ## Call:
@@ -421,7 +421,7 @@ These commands get the hazard ratios correspondng to age in the survival model.<
 <span id="cb19-6"><a href="computational-workflow.html#cb19-6"></a>        coxph_model_full<span class="op">$</span>study2<span class="op">$</span>coefficients[<span class="dv">1</span>,<span class="dv">3</span>], </span>
 <span id="cb19-7"><a href="computational-workflow.html#cb19-7"></a>        coxph_model_full<span class="op">$</span>study3<span class="op">$</span>coefficients[<span class="dv">1</span>,<span class="dv">3</span>])</span>
 <span id="cb19-8"><a href="computational-workflow.html#cb19-8"></a>        </span>
-<span id="cb19-9"><a href="computational-workflow.html#cb19-9"></a>metafor<span class="op">::</span><span class="kw">rma</span>(log_hazard_ratio, <span class="dt">sei =</span> se_hazard_ratio, <span class="dt">method =</span> <span class="st">&#39;REML&#39;</span>)</span></code></pre></div>
+<span id="cb19-9"><a href="computational-workflow.html#cb19-9"></a>metafor<span class="op">::</span><span class="kw">rma</span>(input_logHR, <span class="dt">sei =</span> input_se, <span class="dt">method =</span> <span class="st">&#39;REML&#39;</span>)</span></code></pre></div>
 <p>A summary of this meta-analyzed model is shown below.</p>
 <pre><code>## 
 ## Random-Effects Model (k = 3; tau^2 estimator: REML)
@@ -446,14 +446,15 @@ These commands get the hazard ratios correspondng to age in the survival model.<
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>We now show a forest plot with the meta-analyzed hazard ratios. The hazard ratios come
 from the dsSurvivalClient function <em>ds.coxphSLMA()</em>. The plot shows the coefficients for age in the survival model.</p>
-<div class="figure"><span id="fig:unnamed-chunk-20"></span>
-<img src="survival_bookdown_files/figure-html/unnamed-chunk-20-1.png" alt="Example forest plot of meta-analyzed hazard ratios." width="672" />
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="computational-workflow.html#cb21-1"></a>metafor<span class="op">::</span><span class="kw">forest.rma</span>(<span class="dt">x =</span> meta_model, <span class="dt">digits =</span> <span class="dv">4</span>) <span class="co"># at = c(0.999, 1, 1.006),   # ticks for hazard ratio at these places</span></span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-21"></span>
+<img src="survival_bookdown_files/figure-html/unnamed-chunk-21-1.png" alt="Example forest plot of meta-analyzed hazard ratios." width="672" />
 <p class="caption">
 Figure 3.1: Example forest plot of meta-analyzed hazard ratios.
 </p>
 </div>
 <p>Finally, once you have finished your analysis, you can disconnect from the server(s) using the following command:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="computational-workflow.html#cb21-1"></a>DSI<span class="op">::</span><span class="kw">datashield.logout</span>(<span class="dt">conns =</span> connections)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="computational-workflow.html#cb22-1"></a>DSI<span class="op">::</span><span class="kw">datashield.logout</span>(<span class="dt">conns =</span> connections)</span></code></pre></div>
 <div style="page-break-after: always;"></div>
 <ul>
 <li><p><a href="https://github.com/datashield" class="uri">https://github.com/datashield</a></p></li>
