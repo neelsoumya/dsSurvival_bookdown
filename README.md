@@ -33,7 +33,7 @@ https://neelsoumya.github.io/dsSurvival_bookdown
 
 ## Quick start
 
-Please install R. Then install R Studio 
+Please install R and R Studio 
 
    https://www.rstudio.com/products/rstudio/download/preview/
 
