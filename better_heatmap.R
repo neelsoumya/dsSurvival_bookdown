@@ -1,13 +1,18 @@
+# code to generate better plots by Thodoris 
+
 library(DSI)
 library(DSOpal) 
 library(devtools)
-#load_all("dsBaseClient")
 library(dsBaseClient)
 library(meta)
 library(dplyr)
 library(pheatmap)
 library(gridExtra)
+library(dsSurvivalClient)
+
+
 rm(list=ls())
+
 builder <- DSI::newDSLoginBuilder()
 #CLUSTER simulated data
 builder$append(server = "study1", 
