@@ -1,3 +1,7 @@
+########################################
+# Better forest plot by Thodoris
+########################################
+
 library(knitr)
 library(rmarkdown)
 library(tinytex)
