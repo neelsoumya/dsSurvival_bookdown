@@ -2,6 +2,9 @@
 # Better forest plot by Thodoris
 ########################################
 
+########################
+# load libraries
+########################
 library(knitr)
 library(rmarkdown)
 library(tinytex)
@@ -14,6 +17,10 @@ require('DSI')
 require('DSOpal')
 require('dsBaseClient')
 
+
+#######################
+# connect to servers
+#######################
 builder <- DSI::newDSLoginBuilder()
 
 builder$append(server="server1", url="http://192.168.56.100:8080/",
@@ -95,6 +102,9 @@ effects <- matrix(c(input_logHR
 mtotal <- metagen(TE=logHR, seTE=SE, data=as.data.frame(effects)
                   , method.tau = 'REML', prediction=T, hakn=F)
 
+########################
+# generate forest plot
+########################
 meta::forest(mtotal
              ,digits=4
              ,prediction=F
