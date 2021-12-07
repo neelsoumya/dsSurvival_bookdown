@@ -72,7 +72,7 @@ https://neelsoumya.github.io/dsSurvival_bookdown/
 
 * In R, install the following packages
 
-```
+```{r eval=FALSE}
   
   install.packages('devtools')
 
@@ -129,7 +129,7 @@ A minimal example of a book based on R Markdown and **bookdown** (https://github
 
 The bookdown can be compiled by typing the following commands:
 
-  ```
+  ```{r eval=FALSE}
   
   library(bookdown)
 
@@ -140,7 +140,7 @@ The bookdown can be compiled by typing the following commands:
 
 ## Contact
 
-Soumya Banerjee and Tom R. P. Bishop
+Soumya Banerjee and Tom R.P. Bishop
 
 
 
