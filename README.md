@@ -75,27 +75,16 @@ https://neelsoumya.github.io/dsSurvival_bookdown/
 ```{r eval=FALSE}
   
   install.packages('devtools')
-
   library(devtools)
-
   devtools::install_github('neelsoumya/dsSurvivalClient')
-  
   install.packages('bookdown')
-  
   devtools::install_github('datashield/dsBaseClient@6.1.1')
- 
   install.packages('rmarkdown')
-
   install.packages('knitr')
-
   install.packages('tinytex')
-
   install.packages('metafor')
-  
   install.packages('DSOpal')
-
   install.packages('DSI')
-
   install.packages('opalr')
   
   ```
