@@ -43,7 +43,7 @@ Please install R and R Studio
 Install the following packages:
 
 
-```{r eval=FALSE}
+```r 
 install.packages('devtools')
 library(devtools)
 devtools::install_github('neelsoumya/dsSurvivalClient')
@@ -72,7 +72,7 @@ https://neelsoumya.github.io/dsSurvival_bookdown/
 
 * In R, install the following packages
 
-```{r eval=FALSE}
+```r 
   
   install.packages('devtools')
   library(devtools)
@@ -91,7 +91,7 @@ https://neelsoumya.github.io/dsSurvival_bookdown/
 
   or
 
-  ``` 
+  ```r 
 
   R -no-save < installer_R.R
   
@@ -118,7 +118,7 @@ A minimal example of a book based on R Markdown and **bookdown** (https://github
 
 The bookdown can be compiled by typing the following commands:
 
-  ```{r eval=FALSE}
+  ```r 
   
   library(bookdown)
 
