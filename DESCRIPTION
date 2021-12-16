@@ -1,0 +1,16 @@
+Package: dsSurvival_bookdown
+Type: Book
+Title: dsSurvival: Survival models for DataSHIELD, a tutorial in bookdown format
+Version: 1.0
+Imports: bookdown,
+          dsBaseClient,
+          metafor,
+          survival,
+          dsSurvivalClient,
+          meta,
+          rmarkdown,
+          knitr,
+          tinytex,
+          DSOpal,
+          DSI,
+          opalr
