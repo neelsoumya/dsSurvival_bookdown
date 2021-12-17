@@ -102,6 +102,22 @@ https://neelsoumya.github.io/dsSurvival_bookdown/
   run the following script in R `installer_R.R`
   
  
+ 
+ Install R Studio and the development environment as described below:
+
+    https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
+
+ Install the virtual machines as described below:
+
+    https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6
+
+    https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/1657634881/Testing+100+VM
+
+    https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/1657634898/Tutorial+6.1.0+100+VM
+
+ Install dsBase and dsSurvival on Opal server in the Virtual Machine (type neelsoumya/dsSurvival and main in the textboxes)
+  
+ 
   
   
 ## Usage
