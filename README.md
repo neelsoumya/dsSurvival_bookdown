@@ -65,7 +65,7 @@ https://neelsoumya.github.io/dsSurvival_bookdown/
 
 
 
-## Installation
+## Full Installation
 
 
 * Install R and R Studio 
