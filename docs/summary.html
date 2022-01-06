@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Summary | dsSurvival: Privacy preserving survival models in DataSHIELD</title>
   <meta name="description" content="This is a bookdown demonstrating how to build privacy preserving survival models using dsSurvival in DataSHIELD. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Summary | dsSurvival: Privacy preserving survival models in DataSHIELD" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-11-30" />
+<meta name="date" content="2022-01-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,9 @@
   
 <link rel="prev" href="computational-workflow.html"/>
 <link rel="next" href="references.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,25 +51,23 @@
 
 
 
-
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -120,6 +120,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -138,14 +160,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#survival-models"><i class="fa fa-check"></i><b>2.1</b> Survival models</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="computational-workflow.html"><a href="computational-workflow.html"><i class="fa fa-check"></i><b>3</b> Computational workflow</a><ul>
+<li class="chapter" data-level="3" data-path="computational-workflow.html"><a href="computational-workflow.html"><i class="fa fa-check"></i><b>3</b> Computational workflow</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="computational-workflow.html"><a href="computational-workflow.html#creating-server-side-variables-for-survival-analysis"><i class="fa fa-check"></i><b>3.1</b> Creating server-side variables for survival analysis</a></li>
 <li class="chapter" data-level="3.2" data-path="computational-workflow.html"><a href="computational-workflow.html#create-survival-object-and-call-ds.coxph.slma"><i class="fa fa-check"></i><b>3.2</b> Create survival object and call ds.coxph.SLMA()</a></li>
-<li class="chapter" data-level="3.3" data-path="computational-workflow.html"><a href="computational-workflow.html#summary-of-survival-objects"><i class="fa fa-check"></i><b>3.3</b> Summary of survival objects</a></li>
-<li class="chapter" data-level="3.4" data-path="computational-workflow.html"><a href="computational-workflow.html#diagnostics-for-cox-proportional-hazards-models"><i class="fa fa-check"></i><b>3.4</b> Diagnostics for Cox proportional hazards models</a></li>
+<li class="chapter" data-level="3.3" data-path="computational-workflow.html"><a href="computational-workflow.html#diagnostics-for-cox-proportional-hazards-models"><i class="fa fa-check"></i><b>3.3</b> Diagnostics for Cox proportional hazards models</a></li>
+<li class="chapter" data-level="3.4" data-path="computational-workflow.html"><a href="computational-workflow.html#summary-of-survival-objects"><i class="fa fa-check"></i><b>3.4</b> Summary of survival objects</a></li>
 <li class="chapter" data-level="3.5" data-path="computational-workflow.html"><a href="computational-workflow.html#meta-analyze-hazard-ratios"><i class="fa fa-check"></i><b>3.5</b> Meta-analyze hazard ratios</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>4</b> Summary</a></li>
@@ -170,7 +194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="summary" class="section level1">
+<div id="summary" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Summary</h1>
 <p>This bookdown shows how to build privacy preserving survival models using dsSurvival in DataSHIELD. You can read more at:</p>
 <ul>
@@ -191,7 +215,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -231,6 +254,10 @@ gitbook.start({
 "text": null
 },
 "download": ["survival_bookdown.pdf", "survival_bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

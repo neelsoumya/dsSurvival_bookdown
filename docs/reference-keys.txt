@@ -1,11 +1,11 @@
-fig:unnamed-chunk-29
+fig:unnamed-chunk-21
 prerequisites
 intro
 survival-models
 computational-workflow
 creating-server-side-variables-for-survival-analysis
 create-survival-object-and-call-ds.coxph.slma
-summary-of-survival-objects
 diagnostics-for-cox-proportional-hazards-models
+summary-of-survival-objects
 meta-analyze-hazard-ratios
 summary

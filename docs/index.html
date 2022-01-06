@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>dsSurvival: Privacy preserving survival models in DataSHIELD</title>
   <meta name="description" content="This is a bookdown demonstrating how to build privacy preserving survival models using dsSurvival in DataSHIELD. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="dsSurvival: Privacy preserving survival models in DataSHIELD" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-11-30" />
+<meta name="date" content="2022-01-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,9 @@
   
 
 <link rel="next" href="intro.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,25 +51,23 @@
 
 
 
-
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -120,6 +120,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -138,14 +160,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#survival-models"><i class="fa fa-check"></i><b>2.1</b> Survival models</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="computational-workflow.html"><a href="computational-workflow.html"><i class="fa fa-check"></i><b>3</b> Computational workflow</a><ul>
+<li class="chapter" data-level="3" data-path="computational-workflow.html"><a href="computational-workflow.html"><i class="fa fa-check"></i><b>3</b> Computational workflow</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="computational-workflow.html"><a href="computational-workflow.html#creating-server-side-variables-for-survival-analysis"><i class="fa fa-check"></i><b>3.1</b> Creating server-side variables for survival analysis</a></li>
 <li class="chapter" data-level="3.2" data-path="computational-workflow.html"><a href="computational-workflow.html#create-survival-object-and-call-ds.coxph.slma"><i class="fa fa-check"></i><b>3.2</b> Create survival object and call ds.coxph.SLMA()</a></li>
-<li class="chapter" data-level="3.3" data-path="computational-workflow.html"><a href="computational-workflow.html#summary-of-survival-objects"><i class="fa fa-check"></i><b>3.3</b> Summary of survival objects</a></li>
-<li class="chapter" data-level="3.4" data-path="computational-workflow.html"><a href="computational-workflow.html#diagnostics-for-cox-proportional-hazards-models"><i class="fa fa-check"></i><b>3.4</b> Diagnostics for Cox proportional hazards models</a></li>
+<li class="chapter" data-level="3.3" data-path="computational-workflow.html"><a href="computational-workflow.html#diagnostics-for-cox-proportional-hazards-models"><i class="fa fa-check"></i><b>3.3</b> Diagnostics for Cox proportional hazards models</a></li>
+<li class="chapter" data-level="3.4" data-path="computational-workflow.html"><a href="computational-workflow.html#summary-of-survival-objects"><i class="fa fa-check"></i><b>3.4</b> Summary of survival objects</a></li>
 <li class="chapter" data-level="3.5" data-path="computational-workflow.html"><a href="computational-workflow.html#meta-analyze-hazard-ratios"><i class="fa fa-check"></i><b>3.5</b> Meta-analyze hazard ratios</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>4</b> Summary</a></li>
@@ -173,9 +197,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">dsSurvival: Privacy preserving survival models in DataSHIELD</h1>
 <p class="author"><em>Soumya Banerjee and Tom R P Bishop</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-11-30</em></p>
+<p class="date"><em>2022-01-06</em></p>
 </div>
-<div id="prerequisites" class="section level1">
+<div id="prerequisites" class="section level1" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
 <p>This is a bookdown with executable code demonstrating how to use the dsSurvival package to create privacy preserving survival models in DataSHIELD. dsSurvival builds privacy preserving survival models.</p>
 <p>DataSHIELD is a platform for federated analysis of private data. DataSHIELD has a client-server architecture and this package has a client side and server side component.</p>
@@ -187,27 +211,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a href="https://www.rstudio.com/products/rstudio/download/preview/" class="uri">https://www.rstudio.com/products/rstudio/download/preview/</a></p>
 <p>We assume that the reader is familiar with R and DataSHIELD.</p>
 <p>We outline some of the other prerequisites that need to be installed below:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2"></a></span>
-<span id="cb1-3"><a href="index.html#cb1-3"></a><span class="kw">library</span>(devtools)</span>
-<span id="cb1-4"><a href="index.html#cb1-4"></a></span>
-<span id="cb1-5"><a href="index.html#cb1-5"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;neelsoumya/dsSurvivalClient&#39;</span>)</span>
-<span id="cb1-6"><a href="index.html#cb1-6"></a></span>
-<span id="cb1-7"><a href="index.html#cb1-7"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;datashield/dsBaseClient@6.1.1&#39;</span>)</span>
-<span id="cb1-8"><a href="index.html#cb1-8"></a></span>
-<span id="cb1-9"><a href="index.html#cb1-9"></a><span class="kw">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>)</span>
-<span id="cb1-10"><a href="index.html#cb1-10"></a></span>
-<span id="cb1-11"><a href="index.html#cb1-11"></a><span class="kw">install.packages</span>(<span class="st">&#39;knitr&#39;</span>)</span>
-<span id="cb1-12"><a href="index.html#cb1-12"></a></span>
-<span id="cb1-13"><a href="index.html#cb1-13"></a><span class="kw">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb1-14"><a href="index.html#cb1-14"></a></span>
-<span id="cb1-15"><a href="index.html#cb1-15"></a><span class="kw">install.packages</span>(<span class="st">&#39;metafor&#39;</span>)</span>
-<span id="cb1-16"><a href="index.html#cb1-16"></a></span>
-<span id="cb1-17"><a href="index.html#cb1-17"></a><span class="kw">install.packages</span>(<span class="st">&#39;DSOpal&#39;</span>)</span>
-<span id="cb1-18"><a href="index.html#cb1-18"></a></span>
-<span id="cb1-19"><a href="index.html#cb1-19"></a><span class="kw">install.packages</span>(<span class="st">&#39;DSI&#39;</span>)</span>
-<span id="cb1-20"><a href="index.html#cb1-20"></a></span>
-<span id="cb1-21"><a href="index.html#cb1-21"></a><span class="kw">install.packages</span>(<span class="st">&#39;opalr&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</span>
+<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;neelsoumya/dsSurvivalClient&#39;</span>)</span>
+<span id="cb1-6"><a href="index.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="index.html#cb1-7" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;datashield/dsBaseClient@6.1.1&#39;</span>)</span>
+<span id="cb1-8"><a href="index.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="index.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>)</span>
+<span id="cb1-10"><a href="index.html#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="index.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;knitr&#39;</span>)</span>
+<span id="cb1-12"><a href="index.html#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="index.html#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb1-14"><a href="index.html#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="index.html#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;metafor&#39;</span>)</span>
+<span id="cb1-16"><a href="index.html#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="index.html#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;DSOpal&#39;</span>)</span>
+<span id="cb1-18"><a href="index.html#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="index.html#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;DSI&#39;</span>)</span>
+<span id="cb1-20"><a href="index.html#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="index.html#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;opalr&#39;</span>)</span></code></pre></div>
 <!-- Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`. -->
 <!-- To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX <https://yihui.org/tinytex/>. -->
 
@@ -222,7 +246,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -262,6 +285,10 @@ gitbook.start({
 "text": null
 },
 "download": ["survival_bookdown.pdf", "survival_bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

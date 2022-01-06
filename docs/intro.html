@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Introduction | dsSurvival: Privacy preserving survival models in DataSHIELD</title>
   <meta name="description" content="This is a bookdown demonstrating how to build privacy preserving survival models using dsSurvival in DataSHIELD. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Introduction | dsSurvival: Privacy preserving survival models in DataSHIELD" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2021-11-30" />
+<meta name="date" content="2022-01-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,9 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="computational-workflow.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,25 +51,23 @@
 
 
 
-
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -120,6 +120,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -138,14 +160,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#survival-models"><i class="fa fa-check"></i><b>2.1</b> Survival models</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="computational-workflow.html"><a href="computational-workflow.html"><i class="fa fa-check"></i><b>3</b> Computational workflow</a><ul>
+<li class="chapter" data-level="3" data-path="computational-workflow.html"><a href="computational-workflow.html"><i class="fa fa-check"></i><b>3</b> Computational workflow</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="computational-workflow.html"><a href="computational-workflow.html#creating-server-side-variables-for-survival-analysis"><i class="fa fa-check"></i><b>3.1</b> Creating server-side variables for survival analysis</a></li>
 <li class="chapter" data-level="3.2" data-path="computational-workflow.html"><a href="computational-workflow.html#create-survival-object-and-call-ds.coxph.slma"><i class="fa fa-check"></i><b>3.2</b> Create survival object and call ds.coxph.SLMA()</a></li>
-<li class="chapter" data-level="3.3" data-path="computational-workflow.html"><a href="computational-workflow.html#summary-of-survival-objects"><i class="fa fa-check"></i><b>3.3</b> Summary of survival objects</a></li>
-<li class="chapter" data-level="3.4" data-path="computational-workflow.html"><a href="computational-workflow.html#diagnostics-for-cox-proportional-hazards-models"><i class="fa fa-check"></i><b>3.4</b> Diagnostics for Cox proportional hazards models</a></li>
+<li class="chapter" data-level="3.3" data-path="computational-workflow.html"><a href="computational-workflow.html#diagnostics-for-cox-proportional-hazards-models"><i class="fa fa-check"></i><b>3.3</b> Diagnostics for Cox proportional hazards models</a></li>
+<li class="chapter" data-level="3.4" data-path="computational-workflow.html"><a href="computational-workflow.html#summary-of-survival-objects"><i class="fa fa-check"></i><b>3.4</b> Summary of survival objects</a></li>
 <li class="chapter" data-level="3.5" data-path="computational-workflow.html"><a href="computational-workflow.html#meta-analyze-hazard-ratios"><i class="fa fa-check"></i><b>3.5</b> Meta-analyze hazard ratios</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>4</b> Summary</a></li>
@@ -170,36 +194,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
+<div id="intro" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
 <p>This is a document that outlines a vignette for implementing privacy preserving survival models
 and meta-analyzing hazard ratios in the DataSHIELD platform.</p>
 <!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
 <!-- Figures and tables with captions will be placed in `figure` and `table` environments, respectively. -->
 <!-- Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab). -->
-<p>We used the <strong>bookdown</strong> package <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2021</a>)</span>, R Markdown and <strong>knitr</strong> <span class="citation">(Xie <a href="#ref-xie2015" role="doc-biblioref">2015</a>)</span> for this document. Our package <strong>dsSurvival</strong> <span class="citation">(Banerjee and Bishop <a href="#ref-Banerjeef" role="doc-biblioref">2021</a><a href="#ref-Banerjeef" role="doc-biblioref">a</a>)</span><span class="citation">(Banerjee and Bishop <a href="#ref-soumya_banerjee_2021_4917552" role="doc-biblioref">2021</a><a href="#ref-soumya_banerjee_2021_4917552" role="doc-biblioref">b</a>)</span> uses the <strong>metafor</strong> package for meta-analysis <span class="citation">(Viechtbauer <a href="#ref-Viechtbauer2010" role="doc-biblioref">2010</a>)</span>.</p>
-<div id="survival-models" class="section level2">
+<p>We used the <strong>bookdown</strong> package <span class="citation">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2021</a>)</span>, R Markdown and <strong>knitr</strong> <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span> for this document. Our package <strong>dsSurvival</strong> <span class="citation">(<a href="#ref-Banerjeef" role="doc-biblioref">Banerjee and Bishop 2021a</a>)</span><span class="citation">(<a href="#ref-soumya_banerjee_2021_4917552" role="doc-biblioref">Banerjee and Bishop 2021b</a>)</span> uses the <strong>metafor</strong> package for meta-analysis <span class="citation">(<a href="#ref-Viechtbauer2010" role="doc-biblioref">Viechtbauer 2010</a>)</span>.</p>
+<div id="survival-models" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Survival models</h2>
 <p>Survival models are used extensively in healthcare. Previously building survival models in DataSHIELD involved building piecewise exponential regression models. This is an approximation and involves having to define appropriate time buckets. A lack of familiarity with this approach also makes people suspicious.</p>
 <p>The scope of our package implementation is restricted to being study-level meta-analysis (SLMA) rather than full likelihood.</p>
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Banerjeef">
-<p>Banerjee, Soumya, and Tom Bishop. 2021a. “neelsoumya/dsSurvivalClient: Survival functions (client side) for DataSHIELD.” <a href="https://doi.org/10.5281/zenodo.4806588">https://doi.org/10.5281/zenodo.4806588</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Banerjeef" class="csl-entry">
+Banerjee, Soumya, and Tom Bishop. 2021a. <span>“<span class="nocase">neelsoumya/dsSurvivalClient: Survival functions (client side) for DataSHIELD</span>.”</span> <a href="https://doi.org/10.5281/zenodo.4806588">https://doi.org/10.5281/zenodo.4806588</a>.
 </div>
-<div id="ref-soumya_banerjee_2021_4917552">
-<p>Banerjee, Soumya, and Tom R. P. Bishop. 2021b. <em>neelsoumya/dsSurvival: v1.0.0 Survival models in DataSHIELD</em> (version v1.0.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.4917552">https://doi.org/10.5281/zenodo.4917552</a>.</p>
+<div id="ref-soumya_banerjee_2021_4917552" class="csl-entry">
+Banerjee, Soumya, and Tom R. P. Bishop. 2021b. <em><span class="nocase">neelsoumya/dsSurvival: v1.0.0 Survival models in DataSHIELD</span></em> (version v1.0.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.4917552">https://doi.org/10.5281/zenodo.4917552</a>.
 </div>
-<div id="ref-Viechtbauer2010">
-<p>Viechtbauer, Wolfgang. 2010. “Conducting Meta-Analyses in R with the metafor Package.” <em>J. Stat. Softw.</em> 36 (3): 1–48. <a href="https://doi.org/10.18637/jss.v036.i03">https://doi.org/10.18637/jss.v036.i03</a>.</p>
+<div id="ref-Viechtbauer2010" class="csl-entry">
+Viechtbauer, Wolfgang. 2010. <span>“<span class="nocase">Conducting Meta-Analyses in R with the metafor Package</span>.”</span> <em>J. Stat. Softw.</em> 36 (3): 1–48. <a href="https://doi.org/10.18637/jss.v036.i03">https://doi.org/10.18637/jss.v036.i03</a>.
 </div>
-<div id="ref-xie2015">
-<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.</p>
+<div id="ref-xie2015" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
 </div>
-<div id="ref-R-bookdown">
-<p>Xie, Yihui. 2021. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+<div id="ref-R-bookdown" class="csl-entry">
+———. 2021. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
 </div>
 </div>
             </section>
@@ -212,7 +236,6 @@ and meta-analyzing hazard ratios in the DataSHIELD platform.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -252,6 +275,10 @@ gitbook.start({
 "text": null
 },
 "download": ["survival_bookdown.pdf", "survival_bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
