@@ -24,7 +24,7 @@
 <meta name="author" content="Soumya Banerjee and Tom R P Bishop" />
 
 
-<meta name="date" content="2022-01-06" />
+<meta name="date" content="2022-01-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -316,6 +316,10 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
   Checking study3 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female...
   Waiting...  (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female, NU...
   Checking study1 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female...
+  Checking study2 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female...
+  Checking study3 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female...
+  Waiting...  (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female, NU...
+  Checking study1 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female...
   Finalizing assignment study1 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$a...
   Checking study2 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$age + D$female...
   Finalizing assignment study2 (coxph_serverside &lt;- coxphSLMAassignDS(formula = surv_object ~ D$a...
@@ -330,12 +334,16 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
   Checking study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [---------]   0% / 0s
   Waiting...  (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [-------------]   0% / 0s
   Checking study1 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [---------]   0% / 0s
+  Checking study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [---------]   0% / 0s
+  Checking study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [---------]   0% / 0s
+  Waiting...  (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [-------------]   0% / 0s
+  Checking study1 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [---------]   0% / 0s
   Getting aggregate study1 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) []  25% / 0s
   Checking study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [=&gt;-------]  25% / 0s
-  Getting aggregate study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) []  50% / 1s
-  Checking study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;-----]  50% / 1s
-  Getting aggregate study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) []  75% / 1s
-  Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 1s</code></pre>
+  Getting aggregate study2 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) []  50% / 0s
+  Checking study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [===&gt;-----]  50% / 0s
+  Getting aggregate study3 (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) []  75% / 0s
+  Aggregated (cox.zphSLMADS(&quot;coxph_serverside&quot;, &quot;km&quot;, TRUE, FALSE, TRUE)) [==============] 100% / 0s</code></pre>
 <pre><code>## $study1
 ##          chisq df    p
 ## D$age    1.022  1 0.31
@@ -343,10 +351,10 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
 ## GLOBAL   1.239  2 0.54
 ## 
 ## $study2
-##              chisq df    p
-## D$age    -1389.472  1 1.00
-## D$female     0.591  1 0.44
-## GLOBAL    -857.492  2 1.00
+##             chisq df    p
+## D$age    -254.681  1 1.00
+## D$female    0.991  1 0.32
+## GLOBAL   -222.531  2 1.00
 ## 
 ## $study3
 ##          chisq df       p
@@ -360,12 +368,16 @@ Cox proportional hazards models. This requires a call to the function ds.cox.zph
   Checking study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [---------------------------------]   0% / 0s
   Waiting...  (coxphSummaryDS(&quot;coxph_serverside&quot;)) [-------------------------------------]   0% / 0s
   Checking study1 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [---------------------------------]   0% / 0s
+  Checking study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [---------------------------------]   0% / 0s
+  Checking study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [---------------------------------]   0% / 0s
+  Waiting...  (coxphSummaryDS(&quot;coxph_serverside&quot;)) [-------------------------------------]   0% / 0s
+  Checking study1 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [---------------------------------]   0% / 0s
   Getting aggregate study1 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=====&gt;------------------]  25% / 0s
-  Checking study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=======&gt;-------------------------]  25% / 1s
-  Getting aggregate study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [===========&gt;------------]  50% / 1s
-  Checking study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [===============&gt;-----------------]  50% / 1s
-  Getting aggregate study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=================&gt;------]  75% / 1s
-  Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 1s</code></pre>
+  Checking study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=======&gt;-------------------------]  25% / 0s
+  Getting aggregate study2 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [===========&gt;------------]  50% / 0s
+  Checking study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [===============&gt;-----------------]  50% / 0s
+  Getting aggregate study3 (coxphSummaryDS(&quot;coxph_serverside&quot;)) [=================&gt;------]  75% / 0s
+  Aggregated (coxphSummaryDS(&quot;coxph_serverside&quot;)) [======================================] 100% / 0s</code></pre>
 <pre><code>## $study1
 ## Call:
 ## survival::coxph(formula = formula, data = dataTable, weights = weights, 
