@@ -16,7 +16,7 @@ and meta-analyzing hazard ratios in the DataSHIELD platform.
 
 <!-- Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab). -->
 
-We used the **bookdown** package [@R-bookdown], R Markdown and **knitr** [@xie2015] for this document. Our package **dsSurvival** [@Banerjeef][@soumya_banerjee_2021_4917552] uses the **metafor** package for meta-analysis [@Viechtbauer2010].
+We used the **bookdown** package [@R-bookdown], R Markdown and **knitr** [@xie2015] for this document. Our package **dsSurvival** [@Banerjeef][@soumya_banerjee_2021_4917552][@Banerjee2022] uses the **metafor** package for meta-analysis [@Viechtbauer2010].
 
 
 ## Survival models
