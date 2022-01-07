@@ -154,3 +154,11 @@ If you use this code, please cite the following DOI
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4806588.svg)](https://doi.org/10.5281/zenodo.4806588)
 
+
+and the following
+
+dsSurvival: Privacy preserving survival models for federated individual patient meta-analysis in DataSHIELD
+
+https://www.biorxiv.org/content/10.1101/2022.01.04.471418v1
+
+https://doi.org/10.1101/2022.01.04.471418
