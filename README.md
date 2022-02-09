@@ -3,7 +3,7 @@
 
 [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
-This is a bookdown with executable code demonstrating how to use the dsSurvival package to create privacy preserving survival models in DataSHIELD. dsSurvival builds privacy preserving survival models.
+This is a bookdown with executable code demonstrating how to use the dsSurvival package to create privacy preserving survival models in DataSHIELD. `dsSurvival` builds privacy preserving survival models.
 
 DataSHIELD is a platform for federated analysis of private data. This package can be used to build survival models, Cox proportional hazards models or Cox regression models.
 
@@ -14,11 +14,11 @@ https://neelsoumya.github.io/dsSurvival_bookdown
 
 DataSHIELD has a client-server architecture and this package has a client side and server side component.
 
-  * The server side package is called dsSurvival:
+  * The server side package is called `dsSurvival`:
       
       https://github.com/neelsoumya/dsSurvival
 
-  * The client side package is called dsSurvivalClient:
+  * The client side package is called `dsSurvivalClient`:
       
       https://github.com/neelsoumya/dsSurvivalClient
 
