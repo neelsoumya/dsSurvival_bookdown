@@ -24,6 +24,37 @@ DataSHIELD has a client-server architecture and this package has a client side a
 
 
 
+
+
+If you use the code, please cite the following manuscript:
+
+Banerjee S, Sofack G, Papakonstantinou T, Avraam D, Burton P, et al. (2022), dsSurvival: Privacy preserving survival models for federated individual patient meta-analysis in DataSHIELD, bioRxiv: 2022.01.04.471418.
+
+https://www.biorxiv.org/content/10.1101/2022.01.04.471418v2
+
+https://doi.org/10.1101/2022.01.04.471418
+
+https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-022-06085-1
+
+A bib file is available here:
+
+https://github.com/neelsoumya/dsSurvival/blob/main/CITATION.bib
+
+
+```bibtex
+@article{Banerjee2022,
+author = {Banerjee, Soumya and Sofack, Ghislain and Papakonstantinou, Thodoris and Avraam, Demetris and Burton, Paul and Z{\"{o}}ller, Daniela and Bishop, Tom RP},
+doi = {10.1101/2022.01.04.471418},
+journal = {bioRxiv},
+month = {jan},
+pages = {2022.01.04.471418},
+publisher = {Cold Spring Harbor Laboratory},
+title = {{dsSurvival: Privacy preserving survival models for federated individual patient meta-analysis in DataSHIELD}},
+year = {2022}
+}
+```
+
+
 ## Bookdown
 
 The complete bookdown, tutorial, vignette with executable code and synthetic data is available here:
@@ -149,17 +180,32 @@ Soumya Banerjee and Tom R.P. Bishop
 
 ## Citation
 
-If you use this code, please cite the following DOI
 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4806588.svg)](https://doi.org/10.5281/zenodo.4806588)
+If you use the code, please cite the following manuscript:
 
+Banerjee S, Sofack G, Papakonstantinou T, Avraam D, Burton P, et al. (2022), dsSurvival: Privacy preserving survival models for federated individual patient meta-analysis in DataSHIELD, bioRxiv: 2022.01.04.471418.
 
-and the following
-
-dsSurvival: Privacy preserving survival models for federated individual patient meta-analysis in DataSHIELD
-
-https://www.biorxiv.org/content/10.1101/2022.01.04.471418v1
+https://www.biorxiv.org/content/10.1101/2022.01.04.471418v2
 
 https://doi.org/10.1101/2022.01.04.471418
 
+https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-022-06085-1
+
+A bib file is available here:
+
+https://github.com/neelsoumya/dsSurvival/blob/main/CITATION.bib
+
+
+```bibtex
+@article{Banerjee2022,
+author = {Banerjee, Soumya and Sofack, Ghislain and Papakonstantinou, Thodoris and Avraam, Demetris and Burton, Paul and Z{\"{o}}ller, Daniela and Bishop, Tom RP},
+doi = {10.1101/2022.01.04.471418},
+journal = {bioRxiv},
+month = {jan},
+pages = {2022.01.04.471418},
+publisher = {Cold Spring Harbor Laboratory},
+title = {{dsSurvival: Privacy preserving survival models for federated individual patient meta-analysis in DataSHIELD}},
+year = {2022}
+}
+```
