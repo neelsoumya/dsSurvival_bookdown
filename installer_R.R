@@ -38,7 +38,9 @@ install.packages('knitr')
 install.packages('tinytex')
 install.packages('metafor')
 
-devtools::install_github('https://github.com/neelsoumya/dsSurvivalClient', 'privacy_survival_curves')#, force = TRUE)
+# devtools::install_github('https://github.com/neelsoumya/dsSurvivalClient', 'privacy_survival_curves')#, force = TRUE)
+devtools::install_github('https://github.com/neelsoumya/dsSurvivalClient')#, 'privacy_survival_curves')#, force = TRUE)
+
 library(dsSurvivalClient)
 library(bookdown)
 
